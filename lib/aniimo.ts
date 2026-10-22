@@ -1,18 +1,24 @@
 export type Aniimo = { id: number; name: string; element: string; hue: number; image?: string };
 
 // ===== MOCK =====
-// Na fase 2 esta função passa a consultar o Postgres (tabela `aniimo`).
-// O resto do app só depende de getAniimo(), então nada mais muda.
 const NAMES = ["Skippy","Mossling","Embera","Tidepup","Glimmoth","Bramblet","Pebblin","Zephyra","Cindrel","Lumipaw","Frostel","Voltik","Dewdrop","Thornix","Quillby","Marshmo","Sunnyx","Nimbler","Rustle","Cobalto","Fernyx","Gustle","Ashkit","Pondo","Blossa","Craggo","Wispur","Drizzle","Hexbug","Tumblet","Petalune","Ripple","Kindle","Moonlet","Snapdra","Burrowl","Glacier","Sparkle","Mistfin","Oakley","Puddle","Flarepup","Gleamer","Sootlet","Brooklyn","Velvetail","Clovet","Rumbler"];
 const ELEMENTS = ["Água", "Fogo", "Planta", "Luz", "Sombra", "Gelo"];
 
-export async function getAniimo(): Promise<Aniimo[]> {
+export function mockAniimo(): Aniimo[] {
   return Array.from({ length: 60 }, (_, i) => ({
     id: i + 1,
     name: NAMES[i] ?? `Aniimo ${i + 1}`,
     element: ELEMENTS[i % ELEMENTS.length],
     hue: (i * 47) % 360,
   }));
+}
+
+// Lê do Postgres (Neon) quando DATABASE_URL existe; senão usa o mock.
+export async function getAniimo(): Promise<Aniimo[]> {
+  if (!process.env.DATABASE_URL) return mockAniimo();
+  const { neon } = await import("@neondatabase/serverless");
+  const rows = await neon(process.env.DATABASE_URL)`select id, name, element, hue, image from aniimo order by id`;
+  return rows.length ? (rows.map((r) => ({ ...r, image: r.image ?? undefined })) as Aniimo[]) : mockAniimo();
 }
 
 // Enquanto não há sprites reais (/public/aniimo/001.png), desenha um bichinho genérico.

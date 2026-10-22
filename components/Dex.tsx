@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { signIn, signOut } from "next-auth/react";
 import { Aniimo, sprite } from "@/lib/aniimo";
 
 // Box do jogo: 24 slots em formato de hexágono grande (4-5-6-5-4)
@@ -32,6 +33,7 @@ export default function Dex({ aniimo }: { aniimo: Aniimo[] }) {
   const [focus, setFocus] = useState<Aniimo | null>(null);
   const [q, setQ] = useState("");
   const [ready, setReady] = useState(false);
+  const [user, setUser] = useState<string | null>(null); // nome do usuário logado
 
   const boxes = Math.max(1, Math.ceil(aniimo.length / PER_BOX));
   const page = aniimo.slice(box * PER_BOX, (box + 1) * PER_BOX);
@@ -41,12 +43,33 @@ export default function Dex({ aniimo }: { aniimo: Aniimo[] }) {
   const go = (d: number) => setBox((b) => (b + d + boxes) % boxes);
 
   useEffect(() => {
-    try { setCaught(JSON.parse(localStorage.getItem(KEY) || "{}")); } catch {}
-    setReady(true);
+    let local: Record<number, true> = {};
+    try { local = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch {}
+    (async () => {
+      try {
+        const res = await fetch("/api/caught");
+        if (res.ok) {
+          const { name, ids } = (await res.json()) as { name: string; ids: number[] };
+          const merged: Record<number, true> = {};
+          ids.forEach((id) => (merged[id] = true));
+          // Primeiro login: sobe o progresso salvo no navegador e limpa o cache local.
+          const extra = Object.keys(local).map(Number).filter((id) => !merged[id]);
+          if (extra.length) {
+            const up = await fetch("/api/caught", { method: "PUT", body: JSON.stringify({ add: extra }) });
+            if (up.ok) extra.forEach((id) => (merged[id] = true));
+          }
+          try { localStorage.removeItem(KEY); } catch {}
+          setCaught(merged);
+          setUser(name || "Conta");
+          return;
+        }
+      } catch {}
+      setCaught(local);
+    })().finally(() => setReady(true));
   }, []);
   useEffect(() => {
-    if (ready) try { localStorage.setItem(KEY, JSON.stringify(caught)); } catch {}
-  }, [caught, ready]);
+    if (ready && !user) try { localStorage.setItem(KEY, JSON.stringify(caught)); } catch {}
+  }, [caught, ready, user]);
   useEffect(() => {
     const f = (e: KeyboardEvent) => {
       if ((e.target as HTMLElement).tagName === "INPUT") return;
@@ -58,11 +81,20 @@ export default function Dex({ aniimo }: { aniimo: Aniimo[] }) {
     return () => window.removeEventListener("keydown", f);
   });
 
-  const toggle = (id: number) =>
-    setCaught((c) => { const n = { ...c }; if (n[id]) delete n[id]; else n[id] = true; return n; });
+  const sync = (add: number[], remove: number[]) => {
+    if (!user || (!add.length && !remove.length)) return;
+    fetch("/api/caught", { method: "PUT", body: JSON.stringify({ add, remove }) }).catch(() => {});
+  };
+  const toggle = (id: number) => {
+    const had = !!caught[id];
+    setCaught((c) => { const n = { ...c }; if (had) delete n[id]; else n[id] = true; return n; });
+    sync(had ? [] : [id], had ? [id] : []);
+  };
   const togglePage = () => {
     const all = page.every((a) => caught[a.id]);
-    setCaught((c) => { const n = { ...c }; page.forEach((a) => { if (all) delete n[a.id]; else n[a.id] = true; }); return n; });
+    const ids = page.map((a) => a.id);
+    setCaught((c) => { const n = { ...c }; ids.forEach((id) => { if (all) delete n[id]; else n[id] = true; }); return n; });
+    sync(all ? [] : ids, all ? ids : []);
   };
 
   let k = 0;
@@ -70,6 +102,16 @@ export default function Dex({ aniimo }: { aniimo: Aniimo[] }) {
     <main className="stage">
       <div className="top">
         <span className="logo">Aniimo Dex</span>
+        <span className="acct">
+          {user ? (
+            <>
+              <span>{user}</span>
+              <button onClick={() => signOut({ redirect: false }).then(() => location.reload())}>Sair</button>
+            </>
+          ) : (
+            <button onClick={() => signIn()}>Entrar</button>
+          )}
+        </span>
         <input className="search" placeholder="Buscar Aniimo…" value={q} onChange={(e) => setQ(e.target.value)} aria-label="Buscar" />
       </div>
 
