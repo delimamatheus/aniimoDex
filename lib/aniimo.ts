@@ -1,4 +1,4 @@
-export type Aniimo = { id: number; name: string; element: string; hue: number; image?: string };
+export type Aniimo = { id: number; name: string; element: string; hue: number; image?: string; stage?: number; description?: string };
 
 // ===== MOCK =====
 const NAMES = ["Skippy","Mossling","Embera","Tidepup","Glimmoth","Bramblet","Pebblin","Zephyra","Cindrel","Lumipaw","Frostel","Voltik","Dewdrop","Thornix","Quillby","Marshmo","Sunnyx","Nimbler","Rustle","Cobalto","Fernyx","Gustle","Ashkit","Pondo","Blossa","Craggo","Wispur","Drizzle","Hexbug","Tumblet","Petalune","Ripple","Kindle","Moonlet","Snapdra","Burrowl","Glacier","Sparkle","Mistfin","Oakley","Puddle","Flarepup","Gleamer","Sootlet","Brooklyn","Velvetail","Clovet","Rumbler"];
@@ -17,8 +17,8 @@ export function mockAniimo(): Aniimo[] {
 export async function getAniimo(): Promise<Aniimo[]> {
   if (!process.env.DATABASE_URL) return mockAniimo();
   const { neon } = await import("@neondatabase/serverless");
-  const rows = await neon(process.env.DATABASE_URL)`select id, name, element, hue, image from aniimo order by id`;
-  return rows.length ? (rows.map((r) => ({ ...r, image: r.image ?? undefined })) as Aniimo[]) : mockAniimo();
+  const rows = await neon(process.env.DATABASE_URL)`select id, name, element, hue, image, stage, description from aniimo order by id`;
+  return rows.length ? (rows.map((r) => ({ ...r, image: r.image ?? undefined, description: r.description ?? undefined })) as Aniimo[]) : mockAniimo();
 }
 
 // Enquanto não há sprites reais (/public/aniimo/001.png), desenha um bichinho genérico.

@@ -5,7 +5,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "db:generate": "drizzle-kit generate", "db:migrate": "node --env-file=.env.local node_modules/drizzle-kit/bin.cjs migrate", "db:seed": "node --experimental-strip-types --env-file=.env.local scripts/seed.ts"
+    "wiki:fetch": "node --experimental-strip-types scripts/fetch-wiki.ts", "db:generate": "drizzle-kit generate",
+    "db:migrate": "node --env-file=.env.local node_modules/drizzle-kit/bin.cjs migrate",
+    "db:seed": "node --experimental-strip-types --env-file=.env.local scripts/seed.ts"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.2.0",
@@ -20,6 +22,7 @@
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "drizzle-kit": "^0.31.11",
+    "sharp": "^0.35.5",
     "typescript": "^5.6.0"
   }
 }

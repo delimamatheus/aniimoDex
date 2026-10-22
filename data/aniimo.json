@@ -1,0 +1,690 @@
+[
+  {
+    "id": 1,
+    "name": "Brasim",
+    "element": "Fogo",
+    "stage": 1,
+    "description": "Essas criaturas animadas gostam de seguir as Chamaposas. Quando a pelagem fumegante começa a queimar, elas prosperam.",
+    "image": "/aniimo/001.webp"
+  },
+  {
+    "id": 2,
+    "name": "Chamaposa",
+    "element": "Fogo",
+    "stage": 2,
+    "description": "Criaturas que vivem em matilhas e valorizam a lealdade e a união, esses caçadores mantêm um olhar calmo e concentrado que oculta o coração ardente.",
+    "image": "/aniimo/002.webp"
+  },
+  {
+    "id": 3,
+    "name": "Labaruivo",
+    "element": "Fogo",
+    "stage": 3,
+    "description": "Gostam da emoção do combate, pois cada chama e cada queimadura representam seu desenvolvimento.",
+    "image": "/aniimo/003.webp"
+  },
+  {
+    "id": 4,
+    "name": "Inferlobo",
+    "element": "Fogo / Sombra",
+    "stage": 3,
+    "description": "Derrotada após desafiar inimigos poderosos, esta Chamaposa absorveu a alma dos companheiros que compartilharam seu destino amargo. Seu único objetivo é a vingança.",
+    "image": "/aniimo/004.webp"
+  },
+  {
+    "id": 5,
+    "name": "Celéstis",
+    "element": "Sombra",
+    "stage": 1,
+    "description": "Eles adoram comida! Quando procuram alimento na floresta, as estrelas brilhantes na cabeça deles muitas vezes são confundidas com cometas. Eles gostam de juntar comida e enfeitar o ninho com ela.",
+    "image": "/aniimo/005.webp"
+  },
+  {
+    "id": 6,
+    "name": "Esteláris",
+    "element": "Sombra",
+    "stage": 2,
+    "description": "Eles preferem a solidão e costumam se mover pela noite. Com formas estreladas, como se usassem um manto, lembram magos misteriosos e conseguem se teletransportar usando energia psíquica.",
+    "image": "/aniimo/006.webp"
+  },
+  {
+    "id": 7,
+    "name": "Piu",
+    "element": "Vento",
+    "stage": 1,
+    "description": "Costumam voar baixo, atentos a cada movimento na praia para não deixar escapar nenhuma oportunidade.",
+    "image": "/aniimo/007.webp"
+  },
+  {
+    "id": 8,
+    "name": "Trombico",
+    "element": "Vento",
+    "stage": 3,
+    "description": "Eles gostam de se divertir e criar músicas ritmadas, então não se surpreenda ao presenciar uma grande sinfonia.",
+    "image": "/aniimo/008.webp"
+  },
+  {
+    "id": 9,
+    "name": "Bicorneta",
+    "element": "Vento",
+    "stage": 3,
+    "description": "Eles conseguem produzir sons altos e estridentes que ecoam por toda a praia apenas para chamar a atenção.",
+    "image": "/aniimo/009.webp"
+  },
+  {
+    "id": 10,
+    "name": "Tubico",
+    "element": "Vento",
+    "stage": 3,
+    "description": "Seus sons profundos, parecidos com os de uma tuba, refletem a personalidade tranquila e amistosa.",
+    "image": "/aniimo/010.webp"
+  },
+  {
+    "id": 11,
+    "name": "Íris",
+    "element": "Planta",
+    "stage": 1,
+    "description": "A Íris tem um corpo extremamente leve e é geralmente carregada pelo vento. Ela pode descer lentamente em espiral, usando a resistência da saia de pétalas, ou simplesmente se deixar levar pelas correntes de ar.",
+    "image": "/aniimo/011.webp"
+  },
+  {
+    "id": 12,
+    "name": "Irisal",
+    "element": "Planta",
+    "stage": 2,
+    "description": "Em devoção à arte da dança, elas aperfeiçoam constantemente sua técnica, na esperança de compartilhar a alegria pura e a energia do movimento.",
+    "image": "/aniimo/012.webp"
+  },
+  {
+    "id": 13,
+    "name": "Saltilótus",
+    "element": "Água",
+    "stage": 1,
+    "description": "Gostam de se esconder debaixo d’água e observar o ambiente usando uma folha de lótus, um disfarce claramente ineficaz.",
+    "image": "/aniimo/013.webp"
+  },
+  {
+    "id": 14,
+    "name": "Saltravesso",
+    "element": "Água",
+    "stage": 2,
+    "description": "Gostam de se manter frescos e úmidos. É para isso que serve a camada de película que recobre o corpo deles.",
+    "image": "/aniimo/014.webp"
+  },
+  {
+    "id": 15,
+    "name": "Géli",
+    "element": "Água / Gelo",
+    "stage": 3,
+    "description": "São Aniimos elegantes e gentis que cuidam dos mais fracos, mas congelam qualquer um que os desafie.",
+    "image": "/aniimo/015.webp"
+  },
+  {
+    "id": 16,
+    "name": "Folhesim",
+    "element": "Planta / Água",
+    "stage": 3,
+    "description": "Vivem entre flores de lótus e usam a cauda em forma de folha de lótus para esconder o rosto e exibir a natureza elegante.",
+    "image": "/aniimo/016.webp"
+  },
+  {
+    "id": 17,
+    "name": "Nimbi",
+    "element": "Vento",
+    "stage": 1,
+    "description": "Não se surpreenda ao vê-los flutuando em pequenos grupos entre as nuvens acima dos prados.",
+    "image": "/aniimo/017.webp"
+  },
+  {
+    "id": 18,
+    "name": "Turbo",
+    "element": "Vento",
+    "stage": 2,
+    "description": "Gostam de dormir escondidos nas nuvens, pois a pressão do vento e a eletricidade estática fazem a lã fofa facilmente atrair objetos levados pelo vento.",
+    "image": "/aniimo/018.webp"
+  },
+  {
+    "id": 19,
+    "name": "Sonhovino",
+    "element": "Sombra",
+    "stage": 2,
+    "description": "A pelagem, que absorveu energia dos sonhos, apresenta uma ilusão hipnotizante de cores. Ao usá-la como travesseiro, mergulham em doces sonhos.",
+    "image": "/aniimo/019.webp"
+  },
+  {
+    "id": 20,
+    "name": "Ervazum",
+    "element": "Planta",
+    "stage": 1,
+    "description": "Vivem em grupos nos prados, gostam de cavar em busca de nutrientes e adoram cantar juntos, mesmo desafinados!",
+    "image": "/aniimo/020.webp"
+  },
+  {
+    "id": 21,
+    "name": "Ervassom",
+    "element": "Sombra / Planta",
+    "stage": 2,
+    "description": "Seus sons estranhos são capazes de desorientar invasores, reduzir as defesas deles e até fazê-los perder a consciência.",
+    "image": "/aniimo/021.webp"
+  },
+  {
+    "id": 22,
+    "name": "Tuberô",
+    "element": "Planta",
+    "stage": 2,
+    "description": "Precisam absorver nutrientes do solo por meio das raízes para manter a vitalidade e detestam se afastar da terra.",
+    "image": "/aniimo/022.webp"
+  },
+  {
+    "id": 23,
+    "name": "Florigarra",
+    "element": "Pedra / Planta",
+    "stage": 1,
+    "description": "Formam pares para toda a vida e são sempre encontrados no Laris. A flor em forma de coração no topo das conchas indica o estado de felicidade.",
+    "image": "/aniimo/023.webp"
+  },
+  {
+    "id": 24,
+    "name": "Plantogarra",
+    "element": "Pedra / Planta",
+    "stage": 2,
+    "description": "As plantas exuberantes que cobrem as conchas convertem a luz solar em nutrientes, dispensando a necessidade de se alimentar em dias ensolarados.",
+    "image": "/aniimo/024.webp"
+  },
+  {
+    "id": 25,
+    "name": "Geligarra",
+    "element": "Gelo",
+    "stage": 2,
+    "description": "Vivem em cavernas, alimentam-se de minerais e usam as conchas belamente cristalizadas para atrair presas.",
+    "image": "/aniimo/025.webp"
+  },
+  {
+    "id": 26,
+    "name": "Foguéu",
+    "element": "Fogo",
+    "stage": 1,
+    "description": "Apesar de parecerem fogo, essas chamas são apenas energia em fluxo. Elas não soltam calor nenhum, na verdade, elas absorvem o calor ao redor. Às vezes, usam isso para se disfarçar de fogueiras e pregar peças nos outros.",
+    "image": "/aniimo/026.webp"
+  },
+  {
+    "id": 27,
+    "name": "Flamérion",
+    "element": "Fogo",
+    "stage": 2,
+    "description": "Só aparecem à noite. O corpo deles é feito de energia gasosa, podendo se dividir livremente!",
+    "image": "/aniimo/027.webp"
+  },
+  {
+    "id": 28,
+    "name": "Borboscama",
+    "element": "Vento",
+    "stage": 1,
+    "description": "São tímidos e escondem-se ao sentir perigo, mas as escamas fluorescentes que soltam acabam sempre revelando sua posição.",
+    "image": "/aniimo/028.webp"
+  },
+  {
+    "id": 29,
+    "name": "Borbograça",
+    "element": "Vento",
+    "stage": 2,
+    "description": "Andarilhos solitários que, quando ameaçados, criam ilusões ao desprender escamas das asas.",
+    "image": "/aniimo/029.webp"
+  },
+  {
+    "id": 31,
+    "name": "Audeco",
+    "element": "Vento",
+    "stage": 1,
+    "description": "Com as orelhas grandes sempre erguidas, são extremamente sensíveis a sons e não perdem nenhum movimento que chame sua atenção, perto ou longe.",
+    "image": "/aniimo/031.webp"
+  },
+  {
+    "id": 32,
+    "name": "Lupeco",
+    "element": "Vento",
+    "stage": 2,
+    "description": "Curioso e aguçado ao procurar rastros e seguir alvos. O anel na cauda amplifica o ultrassom, permitindo que ele enxergue com facilidade criaturas camufladas.",
+    "image": "/aniimo/032.webp"
+  },
+  {
+    "id": 33,
+    "name": "Brotescudeiro",
+    "element": "Planta",
+    "stage": 1,
+    "description": "Tímidos e chorões, também podem se erguer contra inimigos quando encurralados. Nesse momento, os botões em sua cabeça florescem.",
+    "image": "/aniimo/033.webp"
+  },
+  {
+    "id": 34,
+    "name": "Espilâmina",
+    "element": "Planta",
+    "stage": 2,
+    "description": "As espadas feitas de caules espinhosos são sacadas apenas na hora de proteger o grupo contra inimigos.",
+    "image": "/aniimo/034.webp"
+  },
+  {
+    "id": 35,
+    "name": "Florecanta",
+    "element": "Planta",
+    "stage": 2,
+    "description": "Para acalmar disputas, espalham pétalas perfumadas que despertam felicidade em quem as toca, enfraquecendo o espírito de luta.",
+    "image": "/aniimo/035.webp"
+  },
+  {
+    "id": 36,
+    "name": "Leleovo",
+    "element": "Planta",
+    "stage": 1,
+    "description": "Recolhem-se na concha para descansar, sendo frequentemente confundidos com ovos. Têm medo de batalha, mas adoram multidões e dançam com bolas de grama para animar os outros.",
+    "image": "/aniimo/036.webp"
+  },
+  {
+    "id": 37,
+    "name": "Rugissauro",
+    "element": "Planta",
+    "stage": 2,
+    "description": "As jubas imponentes revelam sua natureza selvagem, enquanto os rugidos ferozes mostram quem realmente são. As caudas armazenam ondas sonoras, liberando uma explosão sônica ao atingir o adversário.",
+    "image": "/aniimo/037.webp"
+  },
+  {
+    "id": 38,
+    "name": "Orval",
+    "element": "Sombra",
+    "stage": 1,
+    "description": "Em parceria com perfumistas, armazenam e fermentam néctar no próprio corpo, convertendo-o em ingredientes de perfume.",
+    "image": "/aniimo/038.webp"
+  },
+  {
+    "id": 39,
+    "name": "Odoran",
+    "element": "Sombra",
+    "stage": 2,
+    "description": "São exigentes com odores, por isso coletam e armazenam néctares diferentes no corpo para criar ingredientes únicos de perfume.",
+    "image": "/aniimo/039.webp"
+  },
+  {
+    "id": 40,
+    "name": "Centélis",
+    "element": "Sombra",
+    "stage": 1,
+    "description": "Se a única forma de evoluir é derrotando outras Centélis, então não há outra escolha a não ser manter as garras afiadas.",
+    "image": "/aniimo/040.webp"
+  },
+  {
+    "id": 41,
+    "name": "Ignítis",
+    "element": "Sombra",
+    "stage": 2,
+    "description": "Afiam suas lâminas e aguardam o momento perfeito escondidos nas sombras enquanto brincam com suas presas. Como assassinos com sangue frio, buscam encerrar cada luta com um único golpe.",
+    "image": "/aniimo/041.webp"
+  },
+  {
+    "id": 42,
+    "name": "Gelosso",
+    "element": "Gelo",
+    "stage": 1,
+    "description": "Filhote cheio de energia com um par de orelhões. A gravata borboleta de osso de gelo no peito é o brinquedo favorito dele. Ele detesta Brasins que não respeitam o espaço pessoal.",
+    "image": "/aniimo/042.webp"
+  },
+  {
+    "id": 43,
+    "name": "Gelâmina",
+    "element": "Gelo",
+    "stage": 2,
+    "description": "Recusando-se a ceder a carícias que poderiam suavizar sua determinação, conduz caçadas em grupo armado com sua lâmina de gelo.",
+    "image": "/aniimo/043.webp"
+  },
+  {
+    "id": 44,
+    "name": "Gelispada",
+    "element": "Gelo",
+    "stage": 3,
+    "description": "Guerreiros orgulhosos e confiantes, as lâminas gélidas na boca fazem os inimigos tremerem de medo.",
+    "image": "/aniimo/044.webp"
+  },
+  {
+    "id": 45,
+    "name": "Raí",
+    "element": "Elétrico",
+    "stage": 1,
+    "description": "Eles vivem entre as árvores. Quando atacam, faíscas douradas estouram da cauda com um crepitar elétrico. Ágeis e ligeiros, são bem difíceis de pegar.",
+    "image": "/aniimo/045.webp"
+  },
+  {
+    "id": 46,
+    "name": "Pelirraio",
+    "element": "Elétrico",
+    "stage": 2,
+    "description": "Usam a pelagem especial para capturar partículas carregadas no ar para gerar e armazenar eletricidade.",
+    "image": "/aniimo/046.webp"
+  },
+  {
+    "id": 47,
+    "name": "Socauda",
+    "element": "Fogo",
+    "stage": 1,
+    "description": "Descrição",
+    "image": "/aniimo/047.webp"
+  },
+  {
+    "id": 48,
+    "name": "Batecauda",
+    "element": "Fogo",
+    "stage": 2,
+    "description": "Descrição",
+    "image": "/aniimo/048.webp"
+  },
+  {
+    "id": 49,
+    "name": "Timilontra",
+    "element": "Água",
+    "stage": 1,
+    "description": "Cavam ao redor em busca de presentes para suas paixões, mas, devido à timidez, as tentativas de conquista sempre falham.",
+    "image": "/aniimo/049.webp"
+  },
+  {
+    "id": 50,
+    "name": "Conchilontra",
+    "element": "Água",
+    "stage": 2,
+    "description": "Usam conchas para criar pás, e dizem que soltam bolhas rosadas quando veem alguém que amam.",
+    "image": "/aniimo/050.webp"
+  },
+  {
+    "id": 51,
+    "name": "Marilontra",
+    "element": "Água",
+    "stage": 3,
+    "description": "Criaturinhas narcisistas que passam grande parte do tempo cuidando da pelagem e fazendo poses perfeitas.",
+    "image": "/aniimo/051.webp"
+  },
+  {
+    "id": 52,
+    "name": "Musculontra",
+    "element": "Água",
+    "stage": 3,
+    "description": "São fortes e poderosos, mas preferem permanecer nos ninhos e enfeitar-se a exibir os músculos.",
+    "image": "/aniimo/052.webp"
+  },
+  {
+    "id": 53,
+    "name": "Conchita",
+    "element": "Água",
+    "stage": 1,
+    "description": "Camufla-se entre as conchas da praia, prendendo-as com os apêndices flexíveis. Durante o dia, fica completamente fechado.",
+    "image": "/aniimo/053.webp"
+  },
+  {
+    "id": 54,
+    "name": "Constela",
+    "element": "Água",
+    "stage": 2,
+    "description": "Deitados sobre as conchas, observam o céu noturno e mergulham em um sonho tecido pelas estrelas.",
+    "image": "/aniimo/054.webp"
+  },
+  {
+    "id": 55,
+    "name": "Conchastro",
+    "element": "Água",
+    "stage": 3,
+    "description": "Transformam as conchas que antes os protegiam em espadas e escudos para defender as frágeis Conchitas ao longo da costa.",
+    "image": "/aniimo/055.webp"
+  },
+  {
+    "id": 56,
+    "name": "Bolisouro",
+    "element": "Pedra",
+    "stage": 1,
+    "description": "Nunca vão a lugar nenhum sem as bolas de pedra, e o constante rolar as deixa cada vez mais redondas e estranhas.",
+    "image": "/aniimo/056.webp"
+  },
+  {
+    "id": 57,
+    "name": "Murisouro",
+    "element": "Pedra",
+    "stage": 2,
+    "description": "Movem-se para trás como seus semelhantes, mas de forma muito mais elegante.",
+    "image": "/aniimo/057.webp"
+  },
+  {
+    "id": 58,
+    "name": "Gulho",
+    "element": "Pedra",
+    "stage": 2,
+    "description": "Uma pedra redonda que acompanhava o Bolisouro dia e noite despertou após tantos impactos. Cansada de ser controlada, engoliu um inseto e passou a se mover por vontade própria.",
+    "image": "/aniimo/058.webp"
+  },
+  {
+    "id": 59,
+    "name": "Fentufo",
+    "element": "Elétrico",
+    "stage": 1,
+    "description": "Estão sempre com um sorriso no rosto e gostam de convidar outros Aniimos para brincar. Apesar de às vezes causarem problemas por travessura e ganância, são sempre perdoados.",
+    "image": "/aniimo/059.webp"
+  },
+  {
+    "id": 60,
+    "name": "Fenjuba",
+    "element": "Elétrico",
+    "stage": 2,
+    "description": "Usando a condutividade excelente da pelagem, condensam o poder dos raios para estender as asas, avançando para dissipar a névoa e melhorar o humor.",
+    "image": "/aniimo/060.webp"
+  },
+  {
+    "id": 61,
+    "name": "Olhelmo",
+    "element": "Sombra",
+    "stage": 1,
+    "description": "O capacete resistente protege o corpo mole, enquanto as garras extensíveis ao redor da boca ajudam na caça.",
+    "image": "/aniimo/061.webp"
+  },
+  {
+    "id": 62,
+    "name": "Peônio",
+    "element": "Sombra",
+    "stage": 2,
+    "description": "Armado com uma espada quebrada e uma armadura, e dotado de coragem e poder, ele defende os amigos e desafia os adversários.",
+    "image": "/aniimo/062.webp"
+  },
+  {
+    "id": 63,
+    "name": "Guerrônio",
+    "element": "Sombra",
+    "stage": 2,
+    "description": "Apesar do tamanho imponente, é tímido e evita conflitos. Encontra sua coragem quando os amigos precisam de proteção.",
+    "image": "/aniimo/063.webp"
+  },
+  {
+    "id": 64,
+    "name": "Mordelino",
+    "element": "Vento",
+    "stage": 1,
+    "description": "Adora morder tudo o que vê. A mandíbula flexível pode se abrir muito. Demonstra afeto com mordidinhas leves.",
+    "image": "/aniimo/064.webp"
+  },
+  {
+    "id": 65,
+    "name": "Elmelino",
+    "element": "Vento",
+    "stage": 2,
+    "description": "Filhote que esconde a fraqueza sob o capacete, sonhando em se tornar forte o suficiente para voar livremente.",
+    "image": "/aniimo/065.webp"
+  },
+  {
+    "id": 66,
+    "name": "Elmedon",
+    "element": "Vento",
+    "stage": 3,
+    "description": "Com uma armadura resistente, parecem estátuas altas quando ficam imóveis, como se montassem guarda sobre tesouros antigos.",
+    "image": "/aniimo/066.webp"
+  },
+  {
+    "id": 67,
+    "name": "Infergon",
+    "element": "Fogo",
+    "stage": 3,
+    "description": "Revestidos por uma armadura forjada pelas chamas, o fogo que expelem em fúria é capaz de derreter quase tudo.",
+    "image": "/aniimo/067.webp"
+  },
+  {
+    "id": 68,
+    "name": "Ursonho",
+    "element": "Pedra",
+    "stage": 1,
+    "description": "Passam o dia em estado de sonambulismo. Se são despertados, tornam-se imediatamente violentos e perdem o controle. Quando a energia se esgota, voltam a dormir profundamente, como bebês.",
+    "image": "/aniimo/068.webp"
+  },
+  {
+    "id": 69,
+    "name": "Ferurso",
+    "element": "Pedra",
+    "stage": 2,
+    "description": "Escondem grande resistência e autocontrole sob uma aparência gentil. Porém, se são provocados ou ficam com fome, perdem o controle e entram em fúria.",
+    "image": "/aniimo/069.webp"
+  },
+  {
+    "id": 70,
+    "name": "Pedrego",
+    "element": "Pedra",
+    "stage": 1,
+    "description": "São geólogos naturais que se alimentam de todos os tipos de minerais, e seu crescimento depende do que consomem.",
+    "image": "/aniimo/070.webp"
+  },
+  {
+    "id": 71,
+    "name": "Lavazar",
+    "element": "Fogo / Pedra",
+    "stage": 2,
+    "description": "Usam garras duras para esmagar cristais e comê-los, armazenando calor que faz surgir padrões vermelho-fogo no corpo. Mesmo pequenos, podem expelir continuamente jatos de chamas de alta temperatura pela boca.",
+    "image": "/aniimo/071.webp"
+  },
+  {
+    "id": 72,
+    "name": "Magmarex",
+    "element": "Fogo / Pedra",
+    "stage": 3,
+    "description": "Cristais incandescentes crescem em seu corpo como lava solidificada. Se o calor armazenado entra em erupção, pode derreter tudo no caminho.",
+    "image": "/aniimo/072.webp"
+  },
+  {
+    "id": 73,
+    "name": "Cristapaça",
+    "element": "Pedra",
+    "stage": 2,
+    "description": "Os minerais que consomem voltam a crescer em seu corpo, com energia refinada armazenada no interior.",
+    "image": "/aniimo/073.webp"
+  },
+  {
+    "id": 74,
+    "name": "Geospina",
+    "element": "Pedra",
+    "stage": 3,
+    "description": "Onde quer que existam minerais cristalinos, eles também são encontrados. Os espinhos rígidos servem tanto para proteção quanto para armazenar energia.",
+    "image": "/aniimo/074.webp"
+  },
+  {
+    "id": 75,
+    "name": "Casita",
+    "element": "Pedra",
+    "stage": 1,
+    "description": "Casitas constroem suas conchas pouco a pouco com lama e, quando estão em perigo, liberam fumaça pelo orifício superior para ocultar os entornos e esconderem-se.",
+    "image": "/aniimo/075.webp"
+  },
+  {
+    "id": 76,
+    "name": "Baialita",
+    "element": "Pedra",
+    "stage": 2,
+    "description": "A anatomia dos Baialitas permite a rotação independente das partes superior e inferior do corpo, possibilitando observar o ambiente com flexibilidade e transformar-se em torres para repelir adversários.",
+    "image": "/aniimo/076.webp"
+  },
+  {
+    "id": 77,
+    "name": "Bulbim",
+    "element": "Elétrico",
+    "stage": 1,
+    "description": "Sua primeira reação a qualquer coisa é fugir, e os órgãos em forma de bulbo indicam seu estado de saúde.",
+    "image": "/aniimo/077.webp"
+  },
+  {
+    "id": 78,
+    "name": "Luminusa",
+    "element": "Elétrico",
+    "stage": 2,
+    "description": "Criatura dependente de luz que brilha ao cair da noite e mantém sua luz acesa mesmo enquanto dorme.",
+    "image": "/aniimo/078.webp"
+  },
+  {
+    "id": 79,
+    "name": "Luminela",
+    "element": "Elétrico",
+    "stage": 3,
+    "description": "Muda o brilho para refletir o humor, usando tentáculos para criar padrões hipnotizantes e ataques elétricos.",
+    "image": "/aniimo/079.webp"
+  },
+  {
+    "id": 80,
+    "name": "Fahluu",
+    "element": "Água",
+    "stage": 1,
+    "description": "Eles esfregam óleo no corpo para formar uma espuma espessa. Essa espuma os limpa e protege, apesar de às vezes eles escorregarem nela sem querer.",
+    "image": "/aniimo/080.webp"
+  },
+  {
+    "id": 81,
+    "name": "Erlath",
+    "element": "Água",
+    "stage": 2,
+    "description": "Suas penas secretam óleo continuamente, formando bolhas ao menor atrito. Eles usam naturalmente a espuma mais macia e densa para proteger os Fahluus em suas costas.",
+    "image": "/aniimo/081.webp"
+  },
+  {
+    "id": 82,
+    "name": "Gingo",
+    "element": "Elétrico",
+    "stage": 3,
+    "description": "Sempre em busca de batidas que abafem seu coração constante, o Gingo adora se mover ao som da música.",
+    "image": "/aniimo/082.webp"
+  },
+  {
+    "id": 10002,
+    "name": "Dançauro",
+    "element": "Elétrico",
+    "stage": 2,
+    "description": "Eles têm membros flexíveis e adoram exibir chutes chamativos para qualquer observador. Também usam a pele que descartam como um capuz sobre a cabeça.",
+    "image": "/aniimo/10002.webp"
+  },
+  {
+    "id": 10003,
+    "name": "Fulminte",
+    "element": "Elétrico",
+    "stage": 2,
+    "description": "Evoluído de uma Centélis com membros dianteiros quebrados que absorveu o poder do raio. As lâminas invertidas remodeladas são extremamente afiadas e brilham com luz elétrica intensa.",
+    "image": "/aniimo/10003.webp"
+  },
+  {
+    "id": 11001,
+    "name": "Pequeno Espírito de Fogo",
+    "element": "Fogo",
+    "stage": 3,
+    "description": "Descrição",
+    "image": "/aniimo/11001.webp"
+  },
+  {
+    "id": 99996,
+    "name": "Lunara",
+    "element": "Luz",
+    "stage": 1,
+    "description": "Seus olhos cintilam com a luz azul profunda da lua e padrões misteriosos aparecem quando usam seu poder.",
+    "image": "/aniimo/99996.webp"
+  },
+  {
+    "id": 99998,
+    "name": "Hélion",
+    "element": "Luz",
+    "stage": 1,
+    "description": "Entusiasmados e confiantes, sempre defendem os amigos em momentos críticos, demonstrando grande poder.",
+    "image": "/aniimo/99998.webp"
+  }
+]
