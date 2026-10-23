@@ -15,12 +15,30 @@ export const aniimo = pgTable(
     position: integer("position").notNull().default(0),
     name: text("name").notNull(),
     element: text("element").notNull(),
+    elements: text("elements").notNull().default(""), // chaves separadas por vírgula ("fire,rock"); a interface traduz
     hue: integer("hue").notNull().default(0),
     image: text("image"),
     stage: integer("stage").notNull().default(1),
     description: text("description"),
   },
   (t) => [primaryKey({ columns: [t.id, t.form] })],
+);
+
+// Nome, descrição e nome da forma em cada idioma. Sem linha para o idioma, vale o texto em português de `aniimo`.
+export const aniimoI18n = pgTable(
+  "aniimo_i18n",
+  {
+    id: integer("id").notNull(),
+    form: text("form").notNull(),
+    lang: text("lang").notNull(),
+    name: text("name").notNull(),
+    description: text("description"),
+    formLabel: text("form_label"),
+  },
+  (t) => [
+    primaryKey({ columns: [t.id, t.form, t.lang] }),
+    foreignKey({ columns: [t.id, t.form], foreignColumns: [aniimo.id, aniimo.form] }).onDelete("cascade"),
+  ],
 );
 
 export const VARIANTS = ["normal", "umbral", "shiny", "prismana"] as const;

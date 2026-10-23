@@ -163,3 +163,8 @@ main:focus{outline:none}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}}
 @media(forced-colors:active){.slot,.st,.vr{border:1px solid ButtonText}.slot.sel{outline:3px solid Highlight}}
 .tag{background:rgba(255,255,255,.9);color:#23384a;padding:0 5px;border-radius:6px;line-height:1.35}
+/* Seletor de idioma e topo das páginas de texto */
+.langsel select{min-height:40px;padding:0 10px;border-radius:99px;border:1px solid rgba(255,255,255,.8);background:rgba(255,255,255,.5);font:inherit;color:#16324a;font-weight:700;cursor:pointer}
+.pagetop{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.pagetop .back{margin:0}
+.page .langsel select{border-color:#9bb3c4;background:#fff}

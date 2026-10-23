@@ -1,8 +1,11 @@
 "use client";
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { signIn, signOut } from "next-auth/react";
+import { signOut } from "next-auth/react";
+import LangSwitch from "@/components/LangSwitch";
 import { Aniimo, entryKey, sprite } from "@/lib/aniimo";
+import { fmt, type Locale } from "@/lib/i18n";
+import type { Messages } from "@/lib/messages";
 
 // Box do jogo: 24 slots em formato de hexágono grande (4-5-6-5-4)
 const ROWS = [4, 5, 6, 5, 4];
@@ -14,12 +17,16 @@ type Variant = "normal" | "umbral" | "shiny" | "prismana";
 type Marks = Record<string, true>; // chave = entryKey(id, form)
 type All = Record<Variant, Marks>;
 type Op = { variant: Variant; add: string[]; remove: string[] };
-const VARIANTS: { id: Variant; label: string }[] = [
-  { id: "normal", label: "Normal" },
-  { id: "umbral", label: "Umbral" },
-  { id: "shiny", label: "Cintilante" },
-  { id: "prismana", label: "Prismana" },
+const VARIANTS: { id: Variant; label: "vNormal" | "vUmbral" | "vShiny" | "vPrismana" }[] = [
+  { id: "normal", label: "vNormal" },
+  { id: "umbral", label: "vUmbral" },
+  { id: "shiny", label: "vShiny" },
+  { id: "prismana", label: "vPrismana" },
 ];
+const ELEMENT_KEY: Record<string, keyof Messages> = {
+  fire: "elFire", water: "elWater", grass: "elGrass", ice: "elIce", rock: "elRock",
+  wind: "elWind", electric: "elElectric", dark: "elDark", holy: "elHoly",
+};
 const EMPTY: All = { normal: {}, umbral: {}, shiny: {}, prismana: {} };
 const key = (a: Aniimo) => entryKey(a.id, a.form);
 const pad = (n: number) => String(n).padStart(3, "0");
@@ -49,11 +56,14 @@ function Face() {
 
 type Props = {
   aniimo: Aniimo[];
+  lang: Locale;
+  t: Messages;
   // Coleção pública de outra pessoa (/c/<token>): somente leitura, sem login nem localStorage.
   readOnly?: { owner: string; caught: Partial<Record<Variant, string[]>> };
 };
 
-export default function Dex({ aniimo, readOnly }: Props) {
+export default function Dex({ aniimo, lang, t, readOnly }: Props) {
+  const tr = (k: keyof Messages, vars?: Record<string, string | number>) => fmt(t[k], vars);
   const [all, setAll] = useState<All>(() => (readOnly ? toMarks(readOnly.caught) : EMPTY));
   const [variant, setVariant] = useState<Variant>("normal");
   const [box, setBox] = useState(0);
@@ -81,7 +91,10 @@ export default function Dex({ aniimo, readOnly }: Props) {
   const shown = (focus && list.some((a) => key(a) === key(focus)) ? focus : null) ?? page[0] ?? null;
   const locked = !!readOnly || loadErr; // sem alterações enquanto o progresso salvo não carregou
   const go = useCallback((d: number) => setBox((b) => (b + d + boxes) % boxes), [boxes]);
-  const variantLabel = VARIANTS.find((v) => v.id === variant)!.label;
+  const variantLabel = (v: Variant) => t[VARIANTS.find((x) => x.id === v)!.label];
+  const elementOf = (a: Aniimo) =>
+    a.elements.length ? a.elements.map((e) => (ELEMENT_KEY[e] ? t[ELEMENT_KEY[e]] : e)).join(" / ") : a.element;
+  const fullName = (a: Aniimo) => (a.formLabel ? `${a.name} (${a.formLabel})` : a.name);
 
   // ---- Carregamento do progresso ----
   const load = useCallback(async () => {
@@ -109,7 +122,7 @@ export default function Dex({ aniimo, readOnly }: Props) {
       }
       if (uploaded) try { localStorage.removeItem(KEY); localStorage.removeItem(KEY_V1); } catch {}
       setAll(merged);
-      setUser(name || "Conta");
+      setUser(name || "·");
     } catch {
       setAll(local);
       setLoadErr(true);
@@ -161,8 +174,8 @@ export default function Dex({ aniimo, readOnly }: Props) {
   useEffect(() => {
     if (!shortcuts) return;
     const f = (e: KeyboardEvent) => {
-      const t = e.target as HTMLElement;
-      if (e.ctrlKey || e.metaKey || e.altKey || t.closest("input, select, textarea, [contenteditable]")) return;
+      const el = e.target as HTMLElement;
+      if (e.ctrlKey || e.metaKey || e.altKey || el.closest("input, select, textarea, [contenteditable]")) return;
       const k = e.key.toLowerCase();
       if (k === "q" || k === "arrowleft") go(-1);
       if (k === "e" || k === "arrowright") go(1);
@@ -184,7 +197,7 @@ export default function Dex({ aniimo, readOnly }: Props) {
     const had = !!caught[k];
     mark((m) => { if (had) delete m[k]; else m[k] = true; });
     sync(had ? [] : [k], had ? [k] : []);
-    setMsg(`${a.name}${a.formLabel ? ` (${a.formLabel})` : ""}: ${had ? "desmarcado" : "marcado como capturado"}`);
+    setMsg(tr(had ? "annUnmarked" : "annMarked", { name: fullName(a) }));
   };
   const togglePage = () => {
     if (locked) return;
@@ -192,20 +205,22 @@ export default function Dex({ aniimo, readOnly }: Props) {
     const keys = page.map(key);
     mark((m) => keys.forEach((k) => { if (every) delete m[k]; else m[k] = true; }));
     sync(every ? [] : keys, every ? keys : []);
-    setMsg(`Storage ${box + 1}: ${every ? "todos desmarcados" : "todos marcados"}`);
+    setMsg(tr(every ? "annPageNone" : "annPageAll", { n: box + 1 }));
   };
   const reset = () => {
-    if (locked || !confirm(`Apagar o progresso de ${variantLabel}?`)) return;
+    if (locked || !confirm(tr("resetConfirm", { variant: variantLabel(variant) }))) return;
     const ids = Object.keys(caught);
     setAll((a) => ({ ...a, [variant]: {} }));
     sync([], ids);
-    setMsg(`Progresso de ${variantLabel} apagado`);
+    setMsg(tr("annReset", { variant: variantLabel(variant) }));
   };
   const pickVariant = (v: Variant) => {
     setVariant(v); setBox(0); setFocus(null);
-    setMsg(`Tipo ${VARIANTS.find((x) => x.id === v)!.label}`);
+    setMsg(tr("annVariant", { variant: variantLabel(v) }));
   };
-  const pickBox = (b: number) => { setBox(b); setMsg(`Storage ${b + 1}`); };
+  const pickBox = (b: number) => { setBox(b); setMsg(tr("storageN", { n: b + 1 })); };
+  const keyHint = (k: string) => (shortcuts ? tr("keyHint", { k }) : "");
+  const signIn = () => { location.href = `/${lang}/signin?callbackUrl=${encodeURIComponent(location.pathname)}`; };
 
   let k = 0;
   return (
@@ -213,63 +228,63 @@ export default function Dex({ aniimo, readOnly }: Props) {
       <header className="top">
         <h1 className="logo">Aniimo Dex</h1>
         <fieldset className="variants">
-          <legend className="sr-only">Tipo de Aniimo</legend>
+          <legend className="sr-only">{t.variantsLegend}</legend>
           {VARIANTS.map((v) => (
             <label key={v.id} className={"vr " + v.id + (variant === v.id ? " on" : "")}>
               <input type="radio" name="variant" value={v.id} checked={variant === v.id} onChange={() => pickVariant(v.id)} />
-              {v.label}
+              {t[v.label]}
             </label>
           ))}
         </fieldset>
+        <LangSwitch lang={lang} label={t.language} />
         {!readOnly && (
           <span className="acct">
             {user ? (
               <>
-                <Link href="/conta">{user}</Link>
-                <button onClick={() => signOut({ redirect: false }).then(() => location.reload())}>Sair</button>
+                <Link href={`/${lang}/account`}>{user}</Link>
+                <button onClick={() => signOut({ redirect: false }).then(() => location.reload())}>{t.signOut}</button>
               </>
             ) : (
-              <button onClick={() => signIn()}>Entrar</button>
+              <button onClick={signIn}>{t.signIn}</button>
             )}
           </span>
         )}
-        <input className="search" type="search" placeholder="Buscar Aniimo…" value={q} onChange={(e) => setQ(e.target.value)} aria-label="Buscar Aniimo por nome ou número" />
+        <input className="search" type="search" placeholder={t.searchPlaceholder} value={q} onChange={(e) => setQ(e.target.value)} aria-label={t.searchLabel} />
       </header>
 
       <div className="banners">
         {readOnly && (
           <p className="banner info">
-            Coleção de <b>{readOnly.owner}</b> · somente leitura. <Link href="/">Monte a sua</Link>
+            {tr("sharedBanner", { owner: readOnly.owner })} <Link href={`/${lang}`}>{t.sharedCta}</Link>
           </p>
         )}
         {loadErr && (
           <p className="banner err" role="alert">
-            Não foi possível carregar seu progresso salvo. As alterações ficam bloqueadas para não sobrescrever nada.{" "}
-            <button onClick={load}>Tentar novamente</button>
+            {t.loadErr} <button onClick={load}>{t.retry}</button>
           </p>
         )}
         {syncErr && (
           <p className="banner err" role="alert">
-            Algumas alterações ainda não foram salvas no servidor.{" "}
-            <button onClick={flush}>Tentar de novo</button>
+            {t.syncErr} <button onClick={flush}>{t.retryShort}</button>
           </p>
         )}
-        {!ready && <p className="banner info" role="status">Carregando seu progresso…</p>}
+        {!ready && <p className="banner info" role="status">{t.loading}</p>}
       </div>
 
-      <nav className="side" aria-label="Storages">
+      <nav className="side" aria-label={t.storages}>
         {Array.from({ length: boxes }, (_, b) => (
           <button key={b} className={"st" + (b === box ? " sel" : "")} onClick={() => pickBox(b)}
-            aria-current={b === box ? "page" : undefined} aria-label={`Storage ${b + 1}, ${countIn(b)} de ${PER_BOX} capturados`}>
+            aria-current={b === box ? "page" : undefined} aria-label={tr("storageAria", { n: b + 1, c: countIn(b), t: PER_BOX })}>
             <span className="stw" aria-hidden><Hex /><b>{countIn(b)}</b></span>
-            <span aria-hidden>Storage {b + 1}</span>
+            <span aria-hidden>{tr("storageN", { n: b + 1 })}</span>
           </button>
         ))}
       </nav>
 
       <main className="center" id="main" tabIndex={-1}>
-        <button className="arrow l" onClick={() => go(-1)} aria-label={`Storage anterior${shortcuts ? " (tecla Q)" : ""}`}>‹<small aria-hidden>Q</small></button>
-        <div className={"grid v-" + variant} role="group" aria-label={`Storage ${box + 1} de ${boxes}, tipo ${variantLabel}, ${countIn(box)} de ${PER_BOX} capturados`}>
+        <button className="arrow l" onClick={() => go(-1)} aria-label={t.prevStorage + keyHint("Q")}>‹<small aria-hidden>Q</small></button>
+        <div className={"grid v-" + variant} role="group"
+          aria-label={tr("gridAria", { n: box + 1, total: boxes, variant: variantLabel(variant), c: countIn(box), t: PER_BOX })}>
           {ROWS.map((n, r) => (
             <div className="row" key={r}>
               {Array.from({ length: n }, (_, i) => {
@@ -278,13 +293,12 @@ export default function Dex({ aniimo, readOnly }: Props) {
                 const ak = key(a);
                 const dim = q && !a.name.toLowerCase().includes(q.toLowerCase()) && String(a.id) !== q;
                 const cls = "slot" + (caught[ak] ? " got" : "") + (shown && key(shown) === ak ? " sel" : "") + (dim ? " dim" : "");
-                const full = a.formLabel ? `${a.name} (${a.formLabel})` : a.name;
-                const state = caught[ak] ? "capturado" : "não capturado";
+                const state = caught[ak] ? t.slotCaught : t.slotNotCaught;
                 return (
-                  <button key={ak} className={cls} title={full}
+                  <button key={ak} className={cls} title={fullName(a)}
                     aria-pressed={readOnly ? undefined : !!caught[ak]}
                     aria-disabled={locked || undefined}
-                    aria-label={`Número ${a.id}, ${full}, ${a.element}${readOnly ? `, ${state}` : ""}`}
+                    aria-label={tr("slotAria", { id: a.id, name: fullName(a), element: elementOf(a) }) + (readOnly ? `, ${state}` : "")}
                     onClick={() => { toggle(a); setFocus(a); }}
                     onMouseEnter={() => setFocus(a)} onFocus={() => setFocus(a)}>
                     <Hex />
@@ -297,50 +311,54 @@ export default function Dex({ aniimo, readOnly }: Props) {
             </div>
           ))}
         </div>
-        <button className="arrow r" onClick={() => go(1)} aria-label={`Próximo storage${shortcuts ? " (tecla E)" : ""}`}>›<small aria-hidden>E</small></button>
+        <button className="arrow r" onClick={() => go(1)} aria-label={t.nextStorage + keyHint("E")}>›<small aria-hidden>E</small></button>
       </main>
 
-      <aside className="panel" aria-label="Detalhes do Aniimo selecionado">
+      <aside className="panel" aria-label={t.panelAria}>
         {shown && (
           <>
             <h2>{shown.name}</h2>
             {shown.formLabel && <p className="form">{shown.formLabel}</p>}
-            <p className="meta">#{pad(shown.id)} · {shown.element}{shown.stage ? ` · Estágio ${shown.stage}` : ""}</p>
+            <p className="meta">#{pad(shown.id)} · {elementOf(shown)}{shown.stage ? ` · ${tr("stageN", { n: shown.stage })}` : ""}</p>
             <div className="portrait">
-              <img className={caught[key(shown)] ? "" : "sil"} src={sprite(shown)} alt={`Ilustração de ${shown.name}${shown.formLabel ? `, ${shown.formLabel}` : ""}`} />
+              <img className={caught[key(shown)] ? "" : "sil"} src={sprite(shown)} alt={tr("portraitAlt", { name: fullName(shown) })} />
             </div>
             {shown.description && <p className="desc">{shown.description}</p>}
-            <p className={"status" + (caught[key(shown)] ? " ok" : "")}>{caught[key(shown)] ? "Capturado" : "Não capturado"}</p>
+            <p className={"status" + (caught[key(shown)] ? " ok" : "")}>{caught[key(shown)] ? t.caught : t.notCaught}</p>
             {!readOnly && (
               <button className="act" onClick={() => toggle(shown)} disabled={locked}>
-                {caught[key(shown)] ? "Desmarcar" : "Marcar como capturado"}
+                {caught[key(shown)] ? t.unmark : t.markCaught}
               </button>
             )}
           </>
         )}
       </aside>
 
-      <section className="bar" aria-label="Progresso e ações">
-        <span><b>Aniimo Dex</b> · {total}/{list.length} capturados</span>
+      <section className="bar" aria-label={t.barAria}>
+        <span><b>Aniimo Dex</b> · {tr("caughtOf", { c: total, t: list.length })}</span>
         <span className="mid">
-          <select value={box} onChange={(e) => pickBox(Number(e.target.value))} aria-label="Ir para o storage">
-            {Array.from({ length: boxes }, (_, b) => <option key={b} value={b}>Storage {b + 1}</option>)}
+          <select value={box} onChange={(e) => pickBox(Number(e.target.value))} aria-label={t.goToStorage}>
+            {Array.from({ length: boxes }, (_, b) => <option key={b} value={b}>{tr("storageN", { n: b + 1 })}</option>)}
           </select>
           <span>{countIn(box)}/{PER_BOX}</span>
-          {!readOnly && <button onClick={togglePage} disabled={locked}>Marcar página toda</button>}
+          {!readOnly && <button onClick={togglePage} disabled={locked}>{t.markPage}</button>}
           <label className="sc">
-            <input type="checkbox" checked={shortcuts} onChange={(e) => setSc(e.target.checked)} /> Atalhos Q/E
+            <input type="checkbox" checked={shortcuts} onChange={(e) => setSc(e.target.checked)} /> {t.shortcuts}
           </label>
         </span>
-        {!readOnly && <button className="rel" onClick={reset} disabled={locked}>Resetar</button>}
+        {!readOnly && <button className="rel" onClick={reset} disabled={locked}>{t.reset}</button>}
       </section>
 
       <footer className="legal">
-        <p>Projeto de fã, sem vínculo oficial com o jogo. Dados e imagens da <a href="https://wiki.aniimo.com" target="_blank" rel="noopener noreferrer">wiki.aniimo.com<span className="sr-only"> (abre em nova aba)</span></a>.</p>
-        <nav aria-label="Informações legais">
-          <Link href="/privacidade">Privacidade</Link>
-          <Link href="/aviso-legal">Aviso legal</Link>
-          {user && <Link href="/conta">Minha conta</Link>}
+        <p>
+          {t.fanBefore}
+          <a href="https://wiki.aniimo.com" target="_blank" rel="noopener noreferrer">wiki.aniimo.com<span className="sr-only">{t.opensNewTab}</span></a>
+          {t.fanAfter}
+        </p>
+        <nav aria-label={t.legalNav}>
+          <Link href={`/${lang}/privacy`}>{t.privacy}</Link>
+          <Link href={`/${lang}/legal`}>{t.legalNotice}</Link>
+          {user && <Link href={`/${lang}/account`}>{t.myAccount}</Link>}
         </nav>
       </footer>
 

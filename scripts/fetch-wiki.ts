@@ -1,11 +1,14 @@
 // Uso: npm run wiki:fetch [-- --force]
 // Lê a listagem de wiki.aniimo.com/pt e a página de cada Aniimo (para descobrir as formas
-// regionais e prismanas), baixa os sprites para public/aniimo/ e grava data/aniimo.json
-// (consumido por `npm run db:seed`).
+// regionais e prismanas), baixa os sprites para public/aniimo/ e grava data/aniimo.json e
+// data/i18n.json, com nome, descrição e nome da forma nos 12 idiomas da wiki
+// (consumidos por `npm run db:seed`).
 import { mkdir, writeFile, access } from "node:fs/promises";
 import sharp from "sharp";
 
-const WIKI = "https://wiki.aniimo.com/pt";
+const wiki = (lang: string) => `https://wiki.aniimo.com/${lang}`;
+const WIKI = wiki("pt");
+const LANGS = ["pt", "en", "es", "fr", "de", "ja", "ko", "tw", "ru", "id", "th", "vi"];
 const UA = "Mozilla/5.0 (aniimo-dex fan project)";
 const FORCE = process.argv.includes("--force");
 
@@ -72,12 +75,13 @@ const slug = (s: string) => s.trim().toLowerCase().replace(/\s+/g, "-");
 // Chave curta da forma no banco: "Highland Form" -> "highland"
 const formKey = (morph: string) => slug(morph.replace(/\s+Form$/i, ""));
 
-async function detail(entryId: string, morph: string): Promise<Detail> {
-  const root = await page(`${WIKI}/item/${encodeURIComponent(entryId)}/${slug(morph)}`);
+async function detail(entryId: string, morph: string, lang = "pt"): Promise<Detail> {
+  const root = await page(`${wiki(lang)}/item/${encodeURIComponent(entryId)}/${slug(morph)}`);
   const key = Object.keys(root.data).find((k) => k.startsWith("aniimo-detail"));
   if (!key) throw new Error(`detalhe de ${entryId}/${morph} não encontrado`);
   const d = root.data[key];
-  const tags: Tag[] = (root.data["morphology-tags-pt"] ?? []).filter((t: any) => t.tagType === "morphologyTypes");
+  const tagsKey = Object.keys(root.data).find((k) => k.startsWith("morphology-tags"));
+  const tags: Tag[] = ((tagsKey && root.data[tagsKey]) ?? []).filter((t: any) => t.tagType === "morphologyTypes");
   return { entry: d.searchKey, forms: d.morphologyList.map((m: any) => m.currentMorphology), tags };
 }
 
@@ -100,7 +104,8 @@ baseDetails.forEach((d) => d.tags.forEach((t) => tags.set(t.tagKey, t)));
 
 type Row = {
   id: number; form: string; formLabel: string | null; kind: "base" | "regional" | "prismana";
-  name: string; element: string; stage: number; description: string; image: string; src: string; sort: number;
+  name: string; element: string; elements: string[]; stage: number; description: string; image: string; src: string; sort: number;
+  entryId: string; morph: string;
 };
 const toRow = (e: Entry, morph: string): Row => {
   const isBase = morph === "Basic Form";
@@ -112,6 +117,9 @@ const toRow = (e: Entry, morph: string): Row => {
     kind: isBase ? "base" : form === "prismana" ? "prismana" : "regional",
     name: e.name,
     element: e.attributes.map((a) => ELEMENTS[a] ?? a.replace("attributes-", "")).join(" / "),
+    elements: e.attributes.map((a) => a.replace("attributes-", "")), // chaves; a interface traduz
+    entryId: e.entryId,
+    morph,
     stage: Number(e.currentStage) || 1,
     description: e.description,
     image: `/aniimo/${e.entryId.padStart(3, "0")}${isBase ? "" : "-" + form}.webp`,
@@ -149,7 +157,32 @@ await pool(rows, 6, async (r) => {
   done++;
 });
 
-const out = rows.map(({ src, sort, ...r }, position) => ({ ...r, position }));
+const out = rows.map(({ src, sort, entryId, morph, ...r }, position) => ({ ...r, position }));
 await writeFile("data/aniimo.json", JSON.stringify(out, null, 2) + "\n");
+
+// 5) Textos nos outros idiomas: nome, descrição e nome da forma. Chave = "5" ou "5:highland".
+type Tr = { n: string; d: string; f?: string };
+const ek = (r: Row) => (r.form === "basic" ? String(r.id) : `${r.id}:${r.form}`);
+const i18n: Record<string, Record<string, Tr>> = {};
+for (const lang of LANGS) {
+  const tr: Record<string, Tr> = {};
+  const list = new Map(listEntries(await page(wiki(lang))).map((e) => [e.entryId, e]));
+  const labels = new Map<string, string>();
+  await pool(rows, 4, async (r) => {
+    if (r.kind === "base") {
+      const e = list.get(r.entryId);
+      if (!e) throw new Error(`${lang}: ${r.entryId} ausente na listagem`);
+      tr[ek(r)] = { n: e.name, d: e.description };
+      return;
+    }
+    const d = await detail(r.entryId, r.morph, lang);
+    d.tags.forEach((t) => labels.set(t.tagKey, t.name));
+    tr[ek(r)] = { n: d.entry.name, d: d.entry.description, f: "" };
+  });
+  for (const r of rows) if (r.kind !== "base") tr[ek(r)].f = labels.get(r.morph) ?? r.formLabel ?? r.morph;
+  i18n[lang] = tr;
+  console.log(`  ${lang}: ${Object.keys(tr).length} entradas`);
+}
+await writeFile("data/i18n.json", JSON.stringify(i18n) + "\n");
 const n = (k: Row["kind"]) => rows.filter((r) => r.kind === k).length;
 console.log(`${rows.length} entradas (${n("base")} base, ${n("regional")} regionais, ${n("prismana")} prismanas), ${done} imagens, dados em data/aniimo.json`);

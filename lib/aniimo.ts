@@ -4,7 +4,7 @@ export type Aniimo = {
   form: string; // "basic" | "highland" | "prismana" | ...
   formLabel?: string;
   kind: Kind;
-  name: string; element: string; hue: number; image?: string; stage?: number; description?: string;
+  name: string; element: string; elements: string[]; hue: number; image?: string; stage?: number; description?: string;
 };
 
 // Chave única de uma entrada: "5" (básica) ou "5:highland". Usada no cliente e na API.
@@ -23,6 +23,7 @@ export function mockAniimo(): Aniimo[] {
     id: i + 1,
     form: "basic",
     kind: "base" as const,
+    elements: [] as string[],
     name: NAMES[i] ?? `Aniimo ${i + 1}`,
     element: ELEMENTS[i % ELEMENTS.length],
     hue: (i * 47) % 360,
@@ -31,18 +32,31 @@ export function mockAniimo(): Aniimo[] {
 
 // Lê do Postgres (Neon). O mock só vale em desenvolvimento, sem banco configurado:
 // em produção, falha explícita (a página de erro aparece e o Next segue servindo a última versão boa).
-export async function getAniimo(): Promise<Aniimo[]> {
+export async function getAniimo(lang = "pt"): Promise<Aniimo[]> {
   if (!process.env.DATABASE_URL) {
     if (process.env.NODE_ENV === "production") throw new Error("DATABASE_URL não configurada");
     return mockAniimo();
   }
   const { neon } = await import("@neondatabase/serverless");
-  const rows = await neon(process.env.DATABASE_URL)`select id, form, form_label, kind, name, element, hue, image, stage, description from aniimo order by position, id`;
+  // Texto no idioma pedido; se não houver tradução, cai no português guardado em `aniimo`.
+  const rows = await neon(process.env.DATABASE_URL)`
+    select a.id, a.form, coalesce(i.form_label, a.form_label) as form_label, a.kind,
+           coalesce(i.name, a.name) as name, a.element, a.elements, a.hue, a.image, a.stage,
+           coalesce(i.description, a.description) as description
+    from aniimo a
+    left join aniimo_i18n i on i.id = a.id and i.form = a.form and i.lang = ${lang}
+    order by a.position, a.id`;
   if (!rows.length) {
     if (process.env.NODE_ENV === "production") throw new Error("Tabela aniimo vazia: rode npm run db:seed");
     return mockAniimo();
   }
-  return rows.map(({ form_label, ...r }) => ({ ...r, formLabel: form_label ?? undefined, image: r.image ?? undefined, description: r.description ?? undefined })) as Aniimo[];
+  return rows.map(({ form_label, elements, ...r }) => ({
+    ...r,
+    elements: elements ? String(elements).split(",") : [],
+    formLabel: form_label ?? undefined,
+    image: r.image ?? undefined,
+    description: r.description ?? undefined,
+  })) as Aniimo[];
 }
 
 // Enquanto não há sprites reais (/public/aniimo/001.png), desenha um bichinho genérico.

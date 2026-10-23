@@ -41,3 +41,14 @@ Se você é titular dos direitos e deseja que algum conteúdo seja removido, abr
 - `NEXT_PUBLIC_CONTACT_EMAIL`: e-mail exibido em Privacidade e Aviso legal. Sem ele, o contato é pelas issues do GitHub.
 
 Ícones do site: `node --experimental-strip-types scripts/make-icons.ts <imagem-quadrada>` regenera `app/icon.png`, `app/apple-icon.png` e `app/favicon.ico`.
+
+## Idiomas
+
+O site existe em 12 idiomas, os mesmos da wiki oficial: `pt en es fr de ja ko tw ru id th vi`. Cada um tem a própria URL (`/pt`, `/ja`, …), com `hreflang` e sitemap por idioma.
+
+- **Detecção automática** (`middleware.ts`, `lib/i18n.ts`): quem abre `/` é redirecionado (307) para um idioma, nesta ordem: escolha salva em cookie (`NEXT_LOCALE`) > idioma do navegador (`Accept-Language`) > país da conexão (cabeçalho `x-vercel-ip-country`, só na Vercel) > inglês. O país é só apoio: não define o idioma de quem tem um idioma suportado no navegador.
+- **Troca manual**: seletor no topo; a escolha vira cookie.
+- **Textos da interface**: `lib/messages/<idioma>.ts`. O português (`pt.ts`) define as chaves e o TypeScript obriga os outros a ter todas.
+- **Nome, descrição e forma de cada Aniimo**: vêm da wiki (`npm run wiki:fetch` gera `data/i18n.json`; `npm run db:seed` grava na tabela `aniimo_i18n`). Sem tradução para um idioma, vale o português.
+- Política de privacidade e aviso legal existem em português e inglês; os outros idiomas mostram a versão em inglês com um aviso.
+- Painel de admin (`/<idioma>/admin`) só em português.

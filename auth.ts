@@ -8,8 +8,13 @@ const providers = [
   process.env.AUTH_GOOGLE_ID && Google,
 ].filter(Boolean) as (typeof GitHub)[];
 
+// Provedores ativos (só entram os que têm credenciais no ambiente).
+export const providerIds = [process.env.AUTH_GITHUB_ID && "github", process.env.AUTH_GOOGLE_ID && "google"].filter(Boolean) as string[];
+
 export const { handlers, auth, signIn, signOut } = NextAuth({
   providers,
+  // Páginas próprias (traduzidas); o middleware acrescenta o prefixo de idioma.
+  pages: { signIn: "/signin", error: "/signin" },
   session: { strategy: "jwt" },
   callbacks: {
     // Guarda "<provider>:<id>" para não colidir ids entre providers.

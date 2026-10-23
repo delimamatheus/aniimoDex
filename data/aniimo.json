@@ -6,6 +6,9 @@
     "kind": "base",
     "name": "Brasim",
     "element": "Fogo",
+    "elements": [
+      "fire"
+    ],
     "stage": 1,
     "description": "Essas criaturas animadas gostam de seguir as Chamaposas. Quando a pelagem fumegante começa a queimar, elas prosperam.",
     "image": "/aniimo/001.webp",
@@ -18,6 +21,9 @@
     "kind": "base",
     "name": "Chamaposa",
     "element": "Fogo",
+    "elements": [
+      "fire"
+    ],
     "stage": 2,
     "description": "Criaturas que vivem em matilhas e valorizam a lealdade e a união, esses caçadores mantêm um olhar calmo e concentrado que oculta o coração ardente.",
     "image": "/aniimo/002.webp",
@@ -30,6 +36,9 @@
     "kind": "base",
     "name": "Labaruivo",
     "element": "Fogo",
+    "elements": [
+      "fire"
+    ],
     "stage": 3,
     "description": "Gostam da emoção do combate, pois cada chama e cada queimadura representam seu desenvolvimento.",
     "image": "/aniimo/003.webp",
@@ -42,6 +51,10 @@
     "kind": "base",
     "name": "Inferlobo",
     "element": "Fogo / Sombra",
+    "elements": [
+      "fire",
+      "dark"
+    ],
     "stage": 3,
     "description": "Derrotada após desafiar inimigos poderosos, esta Chamaposa absorveu a alma dos companheiros que compartilharam seu destino amargo. Seu único objetivo é a vingança.",
     "image": "/aniimo/004.webp",
@@ -54,6 +67,9 @@
     "kind": "base",
     "name": "Celéstis",
     "element": "Sombra",
+    "elements": [
+      "dark"
+    ],
     "stage": 1,
     "description": "Eles adoram comida! Quando procuram alimento na floresta, as estrelas brilhantes na cabeça deles muitas vezes são confundidas com cometas. Eles gostam de juntar comida e enfeitar o ninho com ela.",
     "image": "/aniimo/005.webp",
@@ -66,6 +82,9 @@
     "kind": "base",
     "name": "Esteláris",
     "element": "Sombra",
+    "elements": [
+      "dark"
+    ],
     "stage": 2,
     "description": "Eles preferem a solidão e costumam se mover pela noite. Com formas estreladas, como se usassem um manto, lembram magos misteriosos e conseguem se teletransportar usando energia psíquica.",
     "image": "/aniimo/006.webp",
@@ -78,6 +97,9 @@
     "kind": "base",
     "name": "Piu",
     "element": "Vento",
+    "elements": [
+      "wind"
+    ],
     "stage": 1,
     "description": "Costumam voar baixo, atentos a cada movimento na praia para não deixar escapar nenhuma oportunidade.",
     "image": "/aniimo/007.webp",
@@ -90,6 +112,9 @@
     "kind": "base",
     "name": "Trombico",
     "element": "Vento",
+    "elements": [
+      "wind"
+    ],
     "stage": 3,
     "description": "Eles gostam de se divertir e criar músicas ritmadas, então não se surpreenda ao presenciar uma grande sinfonia.",
     "image": "/aniimo/008.webp",
@@ -102,6 +127,9 @@
     "kind": "base",
     "name": "Bicorneta",
     "element": "Vento",
+    "elements": [
+      "wind"
+    ],
     "stage": 3,
     "description": "Eles conseguem produzir sons altos e estridentes que ecoam por toda a praia apenas para chamar a atenção.",
     "image": "/aniimo/009.webp",
@@ -114,6 +142,9 @@
     "kind": "base",
     "name": "Tubico",
     "element": "Vento",
+    "elements": [
+      "wind"
+    ],
     "stage": 3,
     "description": "Seus sons profundos, parecidos com os de uma tuba, refletem a personalidade tranquila e amistosa.",
     "image": "/aniimo/010.webp",
@@ -126,6 +157,9 @@
     "kind": "base",
     "name": "Íris",
     "element": "Planta",
+    "elements": [
+      "grass"
+    ],
     "stage": 1,
     "description": "A Íris tem um corpo extremamente leve e é geralmente carregada pelo vento. Ela pode descer lentamente em espiral, usando a resistência da saia de pétalas, ou simplesmente se deixar levar pelas correntes de ar.",
     "image": "/aniimo/011.webp",
@@ -138,6 +172,9 @@
     "kind": "base",
     "name": "Irisal",
     "element": "Planta",
+    "elements": [
+      "grass"
+    ],
     "stage": 2,
     "description": "Em devoção à arte da dança, elas aperfeiçoam constantemente sua técnica, na esperança de compartilhar a alegria pura e a energia do movimento.",
     "image": "/aniimo/012.webp",
@@ -150,6 +187,9 @@
     "kind": "base",
     "name": "Saltilótus",
     "element": "Água",
+    "elements": [
+      "water"
+    ],
     "stage": 1,
     "description": "Gostam de se esconder debaixo d’água e observar o ambiente usando uma folha de lótus, um disfarce claramente ineficaz.",
     "image": "/aniimo/013.webp",
@@ -162,6 +202,9 @@
     "kind": "base",
     "name": "Saltravesso",
     "element": "Água",
+    "elements": [
+      "water"
+    ],
     "stage": 2,
     "description": "Gostam de se manter frescos e úmidos. É para isso que serve a camada de película que recobre o corpo deles.",
     "image": "/aniimo/014.webp",
@@ -174,6 +217,10 @@
     "kind": "base",
     "name": "Géli",
     "element": "Água / Gelo",
+    "elements": [
+      "water",
+      "ice"
+    ],
     "stage": 3,
     "description": "São Aniimos elegantes e gentis que cuidam dos mais fracos, mas congelam qualquer um que os desafie.",
     "image": "/aniimo/015.webp",
@@ -186,6 +233,10 @@
     "kind": "base",
     "name": "Folhesim",
     "element": "Planta / Água",
+    "elements": [
+      "grass",
+      "water"
+    ],
     "stage": 3,
     "description": "Vivem entre flores de lótus e usam a cauda em forma de folha de lótus para esconder o rosto e exibir a natureza elegante.",
     "image": "/aniimo/016.webp",
@@ -198,6 +249,9 @@
     "kind": "base",
     "name": "Nimbi",
     "element": "Vento",
+    "elements": [
+      "wind"
+    ],
     "stage": 1,
     "description": "Não se surpreenda ao vê-los flutuando em pequenos grupos entre as nuvens acima dos prados.",
     "image": "/aniimo/017.webp",
@@ -210,6 +264,9 @@
     "kind": "base",
     "name": "Turbo",
     "element": "Vento",
+    "elements": [
+      "wind"
+    ],
     "stage": 2,
     "description": "Gostam de dormir escondidos nas nuvens, pois a pressão do vento e a eletricidade estática fazem a lã fofa facilmente atrair objetos levados pelo vento.",
     "image": "/aniimo/018.webp",
@@ -222,6 +279,9 @@
     "kind": "base",
     "name": "Sonhovino",
     "element": "Sombra",
+    "elements": [
+      "dark"
+    ],
     "stage": 2,
     "description": "A pelagem, que absorveu energia dos sonhos, apresenta uma ilusão hipnotizante de cores. Ao usá-la como travesseiro, mergulham em doces sonhos.",
     "image": "/aniimo/019.webp",
@@ -234,6 +294,9 @@
     "kind": "base",
     "name": "Ervazum",
     "element": "Planta",
+    "elements": [
+      "grass"
+    ],
     "stage": 1,
     "description": "Vivem em grupos nos prados, gostam de cavar em busca de nutrientes e adoram cantar juntos, mesmo desafinados!",
     "image": "/aniimo/020.webp",
@@ -246,6 +309,10 @@
     "kind": "base",
     "name": "Ervassom",
     "element": "Sombra / Planta",
+    "elements": [
+      "dark",
+      "grass"
+    ],
     "stage": 2,
     "description": "Seus sons estranhos são capazes de desorientar invasores, reduzir as defesas deles e até fazê-los perder a consciência.",
     "image": "/aniimo/021.webp",
@@ -258,6 +325,9 @@
     "kind": "base",
     "name": "Tuberô",
     "element": "Planta",
+    "elements": [
+      "grass"
+    ],
     "stage": 2,
     "description": "Precisam absorver nutrientes do solo por meio das raízes para manter a vitalidade e detestam se afastar da terra.",
     "image": "/aniimo/022.webp",
@@ -270,6 +340,10 @@
     "kind": "base",
     "name": "Florigarra",
     "element": "Pedra / Planta",
+    "elements": [
+      "rock",
+      "grass"
+    ],
     "stage": 1,
     "description": "Formam pares para toda a vida e são sempre encontrados no Laris. A flor em forma de coração no topo das conchas indica o estado de felicidade.",
     "image": "/aniimo/023.webp",
@@ -282,6 +356,10 @@
     "kind": "base",
     "name": "Plantogarra",
     "element": "Pedra / Planta",
+    "elements": [
+      "rock",
+      "grass"
+    ],
     "stage": 2,
     "description": "As plantas exuberantes que cobrem as conchas convertem a luz solar em nutrientes, dispensando a necessidade de se alimentar em dias ensolarados.",
     "image": "/aniimo/024.webp",
@@ -294,6 +372,9 @@
     "kind": "base",
     "name": "Geligarra",
     "element": "Gelo",
+    "elements": [
+      "ice"
+    ],
     "stage": 2,
     "description": "Vivem em cavernas, alimentam-se de minerais e usam as conchas belamente cristalizadas para atrair presas.",
     "image": "/aniimo/025.webp",
@@ -306,6 +387,9 @@
     "kind": "base",
     "name": "Foguéu",
     "element": "Fogo",
+    "elements": [
+      "fire"
+    ],
     "stage": 1,
     "description": "Apesar de parecerem fogo, essas chamas são apenas energia em fluxo. Elas não soltam calor nenhum, na verdade, elas absorvem o calor ao redor. Às vezes, usam isso para se disfarçar de fogueiras e pregar peças nos outros.",
     "image": "/aniimo/026.webp",
@@ -318,6 +402,9 @@
     "kind": "base",
     "name": "Flamérion",
     "element": "Fogo",
+    "elements": [
+      "fire"
+    ],
     "stage": 2,
     "description": "Só aparecem à noite. O corpo deles é feito de energia gasosa, podendo se dividir livremente!",
     "image": "/aniimo/027.webp",
@@ -330,6 +417,9 @@
     "kind": "base",
     "name": "Borboscama",
     "element": "Vento",
+    "elements": [
+      "wind"
+    ],
     "stage": 1,
     "description": "São tímidos e escondem-se ao sentir perigo, mas as escamas fluorescentes que soltam acabam sempre revelando sua posição.",
     "image": "/aniimo/028.webp",
@@ -342,6 +432,9 @@
     "kind": "base",
     "name": "Borbograça",
     "element": "Vento",
+    "elements": [
+      "wind"
+    ],
     "stage": 2,
     "description": "Andarilhos solitários que, quando ameaçados, criam ilusões ao desprender escamas das asas.",
     "image": "/aniimo/029.webp",
@@ -354,6 +447,9 @@
     "kind": "base",
     "name": "Audeco",
     "element": "Vento",
+    "elements": [
+      "wind"
+    ],
     "stage": 1,
     "description": "Com as orelhas grandes sempre erguidas, são extremamente sensíveis a sons e não perdem nenhum movimento que chame sua atenção, perto ou longe.",
     "image": "/aniimo/031.webp",
@@ -366,6 +462,9 @@
     "kind": "base",
     "name": "Lupeco",
     "element": "Vento",
+    "elements": [
+      "wind"
+    ],
     "stage": 2,
     "description": "Curioso e aguçado ao procurar rastros e seguir alvos. O anel na cauda amplifica o ultrassom, permitindo que ele enxergue com facilidade criaturas camufladas.",
     "image": "/aniimo/032.webp",
@@ -378,6 +477,9 @@
     "kind": "base",
     "name": "Brotescudeiro",
     "element": "Planta",
+    "elements": [
+      "grass"
+    ],
     "stage": 1,
     "description": "Tímidos e chorões, também podem se erguer contra inimigos quando encurralados. Nesse momento, os botões em sua cabeça florescem.",
     "image": "/aniimo/033.webp",
@@ -390,6 +492,9 @@
     "kind": "base",
     "name": "Espilâmina",
     "element": "Planta",
+    "elements": [
+      "grass"
+    ],
     "stage": 2,
     "description": "As espadas feitas de caules espinhosos são sacadas apenas na hora de proteger o grupo contra inimigos.",
     "image": "/aniimo/034.webp",
@@ -402,6 +507,9 @@
     "kind": "base",
     "name": "Florecanta",
     "element": "Planta",
+    "elements": [
+      "grass"
+    ],
     "stage": 2,
     "description": "Para acalmar disputas, espalham pétalas perfumadas que despertam felicidade em quem as toca, enfraquecendo o espírito de luta.",
     "image": "/aniimo/035.webp",
@@ -414,6 +522,9 @@
     "kind": "base",
     "name": "Leleovo",
     "element": "Planta",
+    "elements": [
+      "grass"
+    ],
     "stage": 1,
     "description": "Recolhem-se na concha para descansar, sendo frequentemente confundidos com ovos. Têm medo de batalha, mas adoram multidões e dançam com bolas de grama para animar os outros.",
     "image": "/aniimo/036.webp",
@@ -426,6 +537,9 @@
     "kind": "base",
     "name": "Rugissauro",
     "element": "Planta",
+    "elements": [
+      "grass"
+    ],
     "stage": 2,
     "description": "As jubas imponentes revelam sua natureza selvagem, enquanto os rugidos ferozes mostram quem realmente são. As caudas armazenam ondas sonoras, liberando uma explosão sônica ao atingir o adversário.",
     "image": "/aniimo/037.webp",
@@ -438,6 +552,9 @@
     "kind": "base",
     "name": "Orval",
     "element": "Sombra",
+    "elements": [
+      "dark"
+    ],
     "stage": 1,
     "description": "Em parceria com perfumistas, armazenam e fermentam néctar no próprio corpo, convertendo-o em ingredientes de perfume.",
     "image": "/aniimo/038.webp",
@@ -450,6 +567,9 @@
     "kind": "base",
     "name": "Odoran",
     "element": "Sombra",
+    "elements": [
+      "dark"
+    ],
     "stage": 2,
     "description": "São exigentes com odores, por isso coletam e armazenam néctares diferentes no corpo para criar ingredientes únicos de perfume.",
     "image": "/aniimo/039.webp",
@@ -462,6 +582,9 @@
     "kind": "base",
     "name": "Centélis",
     "element": "Sombra",
+    "elements": [
+      "dark"
+    ],
     "stage": 1,
     "description": "Se a única forma de evoluir é derrotando outras Centélis, então não há outra escolha a não ser manter as garras afiadas.",
     "image": "/aniimo/040.webp",
@@ -474,6 +597,9 @@
     "kind": "base",
     "name": "Ignítis",
     "element": "Sombra",
+    "elements": [
+      "dark"
+    ],
     "stage": 2,
     "description": "Afiam suas lâminas e aguardam o momento perfeito escondidos nas sombras enquanto brincam com suas presas. Como assassinos com sangue frio, buscam encerrar cada luta com um único golpe.",
     "image": "/aniimo/041.webp",
@@ -486,6 +612,9 @@
     "kind": "base",
     "name": "Gelosso",
     "element": "Gelo",
+    "elements": [
+      "ice"
+    ],
     "stage": 1,
     "description": "Filhote cheio de energia com um par de orelhões. A gravata borboleta de osso de gelo no peito é o brinquedo favorito dele. Ele detesta Brasins que não respeitam o espaço pessoal.",
     "image": "/aniimo/042.webp",
@@ -498,6 +627,9 @@
     "kind": "base",
     "name": "Gelâmina",
     "element": "Gelo",
+    "elements": [
+      "ice"
+    ],
     "stage": 2,
     "description": "Recusando-se a ceder a carícias que poderiam suavizar sua determinação, conduz caçadas em grupo armado com sua lâmina de gelo.",
     "image": "/aniimo/043.webp",
@@ -510,6 +642,9 @@
     "kind": "base",
     "name": "Gelispada",
     "element": "Gelo",
+    "elements": [
+      "ice"
+    ],
     "stage": 3,
     "description": "Guerreiros orgulhosos e confiantes, as lâminas gélidas na boca fazem os inimigos tremerem de medo.",
     "image": "/aniimo/044.webp",
@@ -522,6 +657,9 @@
     "kind": "base",
     "name": "Raí",
     "element": "Elétrico",
+    "elements": [
+      "electric"
+    ],
     "stage": 1,
     "description": "Eles vivem entre as árvores. Quando atacam, faíscas douradas estouram da cauda com um crepitar elétrico. Ágeis e ligeiros, são bem difíceis de pegar.",
     "image": "/aniimo/045.webp",
@@ -534,6 +672,9 @@
     "kind": "base",
     "name": "Pelirraio",
     "element": "Elétrico",
+    "elements": [
+      "electric"
+    ],
     "stage": 2,
     "description": "Usam a pelagem especial para capturar partículas carregadas no ar para gerar e armazenar eletricidade.",
     "image": "/aniimo/046.webp",
@@ -546,6 +687,9 @@
     "kind": "base",
     "name": "Socauda",
     "element": "Fogo",
+    "elements": [
+      "fire"
+    ],
     "stage": 1,
     "description": "Descrição",
     "image": "/aniimo/047.webp",
@@ -558,6 +702,9 @@
     "kind": "base",
     "name": "Batecauda",
     "element": "Fogo",
+    "elements": [
+      "fire"
+    ],
     "stage": 2,
     "description": "Descrição",
     "image": "/aniimo/048.webp",
@@ -570,6 +717,9 @@
     "kind": "base",
     "name": "Timilontra",
     "element": "Água",
+    "elements": [
+      "water"
+    ],
     "stage": 1,
     "description": "Cavam ao redor em busca de presentes para suas paixões, mas, devido à timidez, as tentativas de conquista sempre falham.",
     "image": "/aniimo/049.webp",
@@ -582,6 +732,9 @@
     "kind": "base",
     "name": "Conchilontra",
     "element": "Água",
+    "elements": [
+      "water"
+    ],
     "stage": 2,
     "description": "Usam conchas para criar pás, e dizem que soltam bolhas rosadas quando veem alguém que amam.",
     "image": "/aniimo/050.webp",
@@ -594,6 +747,9 @@
     "kind": "base",
     "name": "Marilontra",
     "element": "Água",
+    "elements": [
+      "water"
+    ],
     "stage": 3,
     "description": "Criaturinhas narcisistas que passam grande parte do tempo cuidando da pelagem e fazendo poses perfeitas.",
     "image": "/aniimo/051.webp",
@@ -606,6 +762,9 @@
     "kind": "base",
     "name": "Musculontra",
     "element": "Água",
+    "elements": [
+      "water"
+    ],
     "stage": 3,
     "description": "São fortes e poderosos, mas preferem permanecer nos ninhos e enfeitar-se a exibir os músculos.",
     "image": "/aniimo/052.webp",
@@ -618,6 +777,9 @@
     "kind": "base",
     "name": "Conchita",
     "element": "Água",
+    "elements": [
+      "water"
+    ],
     "stage": 1,
     "description": "Camufla-se entre as conchas da praia, prendendo-as com os apêndices flexíveis. Durante o dia, fica completamente fechado.",
     "image": "/aniimo/053.webp",
@@ -630,6 +792,9 @@
     "kind": "base",
     "name": "Constela",
     "element": "Água",
+    "elements": [
+      "water"
+    ],
     "stage": 2,
     "description": "Deitados sobre as conchas, observam o céu noturno e mergulham em um sonho tecido pelas estrelas.",
     "image": "/aniimo/054.webp",
@@ -642,6 +807,9 @@
     "kind": "base",
     "name": "Conchastro",
     "element": "Água",
+    "elements": [
+      "water"
+    ],
     "stage": 3,
     "description": "Transformam as conchas que antes os protegiam em espadas e escudos para defender as frágeis Conchitas ao longo da costa.",
     "image": "/aniimo/055.webp",
@@ -654,6 +822,9 @@
     "kind": "base",
     "name": "Bolisouro",
     "element": "Pedra",
+    "elements": [
+      "rock"
+    ],
     "stage": 1,
     "description": "Nunca vão a lugar nenhum sem as bolas de pedra, e o constante rolar as deixa cada vez mais redondas e estranhas.",
     "image": "/aniimo/056.webp",
@@ -666,6 +837,9 @@
     "kind": "base",
     "name": "Murisouro",
     "element": "Pedra",
+    "elements": [
+      "rock"
+    ],
     "stage": 2,
     "description": "Movem-se para trás como seus semelhantes, mas de forma muito mais elegante.",
     "image": "/aniimo/057.webp",
@@ -678,6 +852,9 @@
     "kind": "base",
     "name": "Gulho",
     "element": "Pedra",
+    "elements": [
+      "rock"
+    ],
     "stage": 2,
     "description": "Uma pedra redonda que acompanhava o Bolisouro dia e noite despertou após tantos impactos. Cansada de ser controlada, engoliu um inseto e passou a se mover por vontade própria.",
     "image": "/aniimo/058.webp",
@@ -690,6 +867,9 @@
     "kind": "base",
     "name": "Fentufo",
     "element": "Elétrico",
+    "elements": [
+      "electric"
+    ],
     "stage": 1,
     "description": "Estão sempre com um sorriso no rosto e gostam de convidar outros Aniimos para brincar. Apesar de às vezes causarem problemas por travessura e ganância, são sempre perdoados.",
     "image": "/aniimo/059.webp",
@@ -702,6 +882,9 @@
     "kind": "base",
     "name": "Fenjuba",
     "element": "Elétrico",
+    "elements": [
+      "electric"
+    ],
     "stage": 2,
     "description": "Usando a condutividade excelente da pelagem, condensam o poder dos raios para estender as asas, avançando para dissipar a névoa e melhorar o humor.",
     "image": "/aniimo/060.webp",
@@ -714,6 +897,9 @@
     "kind": "base",
     "name": "Olhelmo",
     "element": "Sombra",
+    "elements": [
+      "dark"
+    ],
     "stage": 1,
     "description": "O capacete resistente protege o corpo mole, enquanto as garras extensíveis ao redor da boca ajudam na caça.",
     "image": "/aniimo/061.webp",
@@ -726,6 +912,9 @@
     "kind": "base",
     "name": "Peônio",
     "element": "Sombra",
+    "elements": [
+      "dark"
+    ],
     "stage": 2,
     "description": "Armado com uma espada quebrada e uma armadura, e dotado de coragem e poder, ele defende os amigos e desafia os adversários.",
     "image": "/aniimo/062.webp",
@@ -738,6 +927,9 @@
     "kind": "base",
     "name": "Guerrônio",
     "element": "Sombra",
+    "elements": [
+      "dark"
+    ],
     "stage": 2,
     "description": "Apesar do tamanho imponente, é tímido e evita conflitos. Encontra sua coragem quando os amigos precisam de proteção.",
     "image": "/aniimo/063.webp",
@@ -750,6 +942,9 @@
     "kind": "base",
     "name": "Mordelino",
     "element": "Vento",
+    "elements": [
+      "wind"
+    ],
     "stage": 1,
     "description": "Adora morder tudo o que vê. A mandíbula flexível pode se abrir muito. Demonstra afeto com mordidinhas leves.",
     "image": "/aniimo/064.webp",
@@ -762,6 +957,9 @@
     "kind": "base",
     "name": "Elmelino",
     "element": "Vento",
+    "elements": [
+      "wind"
+    ],
     "stage": 2,
     "description": "Filhote que esconde a fraqueza sob o capacete, sonhando em se tornar forte o suficiente para voar livremente.",
     "image": "/aniimo/065.webp",
@@ -774,6 +972,9 @@
     "kind": "base",
     "name": "Elmedon",
     "element": "Vento",
+    "elements": [
+      "wind"
+    ],
     "stage": 3,
     "description": "Com uma armadura resistente, parecem estátuas altas quando ficam imóveis, como se montassem guarda sobre tesouros antigos.",
     "image": "/aniimo/066.webp",
@@ -786,6 +987,9 @@
     "kind": "base",
     "name": "Infergon",
     "element": "Fogo",
+    "elements": [
+      "fire"
+    ],
     "stage": 3,
     "description": "Revestidos por uma armadura forjada pelas chamas, o fogo que expelem em fúria é capaz de derreter quase tudo.",
     "image": "/aniimo/067.webp",
@@ -798,6 +1002,9 @@
     "kind": "base",
     "name": "Ursonho",
     "element": "Pedra",
+    "elements": [
+      "rock"
+    ],
     "stage": 1,
     "description": "Passam o dia em estado de sonambulismo. Se são despertados, tornam-se imediatamente violentos e perdem o controle. Quando a energia se esgota, voltam a dormir profundamente, como bebês.",
     "image": "/aniimo/068.webp",
@@ -810,6 +1017,9 @@
     "kind": "base",
     "name": "Ferurso",
     "element": "Pedra",
+    "elements": [
+      "rock"
+    ],
     "stage": 2,
     "description": "Escondem grande resistência e autocontrole sob uma aparência gentil. Porém, se são provocados ou ficam com fome, perdem o controle e entram em fúria.",
     "image": "/aniimo/069.webp",
@@ -822,6 +1032,9 @@
     "kind": "base",
     "name": "Pedrego",
     "element": "Pedra",
+    "elements": [
+      "rock"
+    ],
     "stage": 1,
     "description": "São geólogos naturais que se alimentam de todos os tipos de minerais, e seu crescimento depende do que consomem.",
     "image": "/aniimo/070.webp",
@@ -834,6 +1047,10 @@
     "kind": "base",
     "name": "Lavazar",
     "element": "Fogo / Pedra",
+    "elements": [
+      "fire",
+      "rock"
+    ],
     "stage": 2,
     "description": "Usam garras duras para esmagar cristais e comê-los, armazenando calor que faz surgir padrões vermelho-fogo no corpo. Mesmo pequenos, podem expelir continuamente jatos de chamas de alta temperatura pela boca.",
     "image": "/aniimo/071.webp",
@@ -846,6 +1063,10 @@
     "kind": "base",
     "name": "Magmarex",
     "element": "Fogo / Pedra",
+    "elements": [
+      "fire",
+      "rock"
+    ],
     "stage": 3,
     "description": "Cristais incandescentes crescem em seu corpo como lava solidificada. Se o calor armazenado entra em erupção, pode derreter tudo no caminho.",
     "image": "/aniimo/072.webp",
@@ -858,6 +1079,9 @@
     "kind": "base",
     "name": "Cristapaça",
     "element": "Pedra",
+    "elements": [
+      "rock"
+    ],
     "stage": 2,
     "description": "Os minerais que consomem voltam a crescer em seu corpo, com energia refinada armazenada no interior.",
     "image": "/aniimo/073.webp",
@@ -870,6 +1094,9 @@
     "kind": "base",
     "name": "Geospina",
     "element": "Pedra",
+    "elements": [
+      "rock"
+    ],
     "stage": 3,
     "description": "Onde quer que existam minerais cristalinos, eles também são encontrados. Os espinhos rígidos servem tanto para proteção quanto para armazenar energia.",
     "image": "/aniimo/074.webp",
@@ -882,6 +1109,9 @@
     "kind": "base",
     "name": "Casita",
     "element": "Pedra",
+    "elements": [
+      "rock"
+    ],
     "stage": 1,
     "description": "Casitas constroem suas conchas pouco a pouco com lama e, quando estão em perigo, liberam fumaça pelo orifício superior para ocultar os entornos e esconderem-se.",
     "image": "/aniimo/075.webp",
@@ -894,6 +1124,9 @@
     "kind": "base",
     "name": "Baialita",
     "element": "Pedra",
+    "elements": [
+      "rock"
+    ],
     "stage": 2,
     "description": "A anatomia dos Baialitas permite a rotação independente das partes superior e inferior do corpo, possibilitando observar o ambiente com flexibilidade e transformar-se em torres para repelir adversários.",
     "image": "/aniimo/076.webp",
@@ -906,6 +1139,9 @@
     "kind": "base",
     "name": "Bulbim",
     "element": "Elétrico",
+    "elements": [
+      "electric"
+    ],
     "stage": 1,
     "description": "Sua primeira reação a qualquer coisa é fugir, e os órgãos em forma de bulbo indicam seu estado de saúde.",
     "image": "/aniimo/077.webp",
@@ -918,6 +1154,9 @@
     "kind": "base",
     "name": "Luminusa",
     "element": "Elétrico",
+    "elements": [
+      "electric"
+    ],
     "stage": 2,
     "description": "Criatura dependente de luz que brilha ao cair da noite e mantém sua luz acesa mesmo enquanto dorme.",
     "image": "/aniimo/078.webp",
@@ -930,6 +1169,9 @@
     "kind": "base",
     "name": "Luminela",
     "element": "Elétrico",
+    "elements": [
+      "electric"
+    ],
     "stage": 3,
     "description": "Muda o brilho para refletir o humor, usando tentáculos para criar padrões hipnotizantes e ataques elétricos.",
     "image": "/aniimo/079.webp",
@@ -942,6 +1184,9 @@
     "kind": "base",
     "name": "Fahluu",
     "element": "Água",
+    "elements": [
+      "water"
+    ],
     "stage": 1,
     "description": "Eles esfregam óleo no corpo para formar uma espuma espessa. Essa espuma os limpa e protege, apesar de às vezes eles escorregarem nela sem querer.",
     "image": "/aniimo/080.webp",
@@ -954,6 +1199,9 @@
     "kind": "base",
     "name": "Erlath",
     "element": "Água",
+    "elements": [
+      "water"
+    ],
     "stage": 2,
     "description": "Suas penas secretam óleo continuamente, formando bolhas ao menor atrito. Eles usam naturalmente a espuma mais macia e densa para proteger os Fahluus em suas costas.",
     "image": "/aniimo/081.webp",
@@ -966,6 +1214,9 @@
     "kind": "base",
     "name": "Gingo",
     "element": "Elétrico",
+    "elements": [
+      "electric"
+    ],
     "stage": 3,
     "description": "Sempre em busca de batidas que abafem seu coração constante, o Gingo adora se mover ao som da música.",
     "image": "/aniimo/082.webp",
@@ -978,6 +1229,9 @@
     "kind": "base",
     "name": "Dançauro",
     "element": "Elétrico",
+    "elements": [
+      "electric"
+    ],
     "stage": 2,
     "description": "Eles têm membros flexíveis e adoram exibir chutes chamativos para qualquer observador. Também usam a pele que descartam como um capuz sobre a cabeça.",
     "image": "/aniimo/10002.webp",
@@ -990,6 +1244,9 @@
     "kind": "base",
     "name": "Fulminte",
     "element": "Elétrico",
+    "elements": [
+      "electric"
+    ],
     "stage": 2,
     "description": "Evoluído de uma Centélis com membros dianteiros quebrados que absorveu o poder do raio. As lâminas invertidas remodeladas são extremamente afiadas e brilham com luz elétrica intensa.",
     "image": "/aniimo/10003.webp",
@@ -1002,6 +1259,9 @@
     "kind": "base",
     "name": "Pequeno Espírito de Fogo",
     "element": "Fogo",
+    "elements": [
+      "fire"
+    ],
     "stage": 3,
     "description": "Descrição",
     "image": "/aniimo/11001.webp",
@@ -1014,6 +1274,9 @@
     "kind": "base",
     "name": "Lunara",
     "element": "Luz",
+    "elements": [
+      "holy"
+    ],
     "stage": 1,
     "description": "Seus olhos cintilam com a luz azul profunda da lua e padrões misteriosos aparecem quando usam seu poder.",
     "image": "/aniimo/99996.webp",
@@ -1026,6 +1289,9 @@
     "kind": "base",
     "name": "Hélion",
     "element": "Luz",
+    "elements": [
+      "holy"
+    ],
     "stage": 1,
     "description": "Entusiasmados e confiantes, sempre defendem os amigos em momentos críticos, demonstrando grande poder.",
     "image": "/aniimo/99998.webp",
@@ -1038,6 +1304,10 @@
     "kind": "regional",
     "name": "Brasim",
     "element": "Fogo / Pedra",
+    "elements": [
+      "fire",
+      "rock"
+    ],
     "stage": 1,
     "description": "Brasins que vivem nas montanhas têm a pelagem com cores semelhantes a rochas e o pelo desgrenhado moldado pelos ventos fortes.",
     "image": "/aniimo/001-highland.webp",
@@ -1050,6 +1320,9 @@
     "kind": "regional",
     "name": "Brasim",
     "element": "Fogo",
+    "elements": [
+      "fire"
+    ],
     "stage": 1,
     "description": "Brasins que vivem em florestas montanhosas ensolaradas têm a ponta dos pelos dourado-amarelada que parece deixar rastros de sol por onde passam.",
     "image": "/aniimo/001-mountain-woods.webp",
@@ -1062,6 +1335,10 @@
     "kind": "regional",
     "name": "Chamaposa",
     "element": "Fogo / Pedra",
+    "elements": [
+      "fire",
+      "rock"
+    ],
     "stage": 2,
     "description": "Chamaposas que vivem nas montanhas têm camuflagem perfeita e garras revestidas de lava para correr por áreas extremamente quentes.",
     "image": "/aniimo/002-highland.webp",
@@ -1074,6 +1351,9 @@
     "kind": "regional",
     "name": "Chamaposa",
     "element": "Fogo",
+    "elements": [
+      "fire"
+    ],
     "stage": 2,
     "description": "Habitando florestas montanhosas, a ponta dourada de sua pelagem escura se destaca com imponência, refletindo a confiança e o orgulho de um líder de matilha.",
     "image": "/aniimo/002-mountain-woods.webp",
@@ -1086,6 +1366,10 @@
     "kind": "regional",
     "name": "Labaruivo",
     "element": "Fogo / Pedra",
+    "elements": [
+      "fire",
+      "rock"
+    ],
     "stage": 3,
     "description": "Ao golpear rochas derretidas, as patas dianteiras ficam revestidas de lava, aumentando o poder de seus ataques.",
     "image": "/aniimo/003-highland.webp",
@@ -1098,6 +1382,9 @@
     "kind": "regional",
     "name": "Labaruivo",
     "element": "Fogo",
+    "elements": [
+      "fire"
+    ],
     "stage": 3,
     "description": "Habitante das florestas montanhosas, este Labaruivo brilha como se toda a luz do sol tivesse sido absorvida pela pelagem dele.",
     "image": "/aniimo/003-mountain-woods.webp",
@@ -1110,6 +1397,10 @@
     "kind": "regional",
     "name": "Labaruivo",
     "element": "Fogo / Elétrico",
+    "elements": [
+      "fire",
+      "electric"
+    ],
     "stage": 3,
     "description": "Quando atingidos por um raio, os músculos são aprimorados e as chamas se tornam azuis, liberando um calor ainda mais intenso.",
     "image": "/aniimo/003-thunderstorm.webp",
@@ -1122,6 +1413,10 @@
     "kind": "regional",
     "name": "Esteláris",
     "element": "Sombra / Água",
+    "elements": [
+      "dark",
+      "water"
+    ],
     "stage": 3,
     "description": "Esteláris que nascem na estação das chuvas são vistos mais frequentemente em dias chuvosos, pois a pele fina necessita de umidade contínua.",
     "image": "/aniimo/006-rainstorm.webp",
@@ -1134,6 +1429,10 @@
     "kind": "regional",
     "name": "Piu",
     "element": "Vento / Planta",
+    "elements": [
+      "wind",
+      "grass"
+    ],
     "stage": 1,
     "description": "Os Pius que vivem nas terras altas têm penas da cor de folhas secas. Seus olhos são cobertos por uma penugem fofa, dando a eles um ar descontraído.",
     "image": "/aniimo/007-highland.webp",
@@ -1146,6 +1445,10 @@
     "kind": "regional",
     "name": "Piu",
     "element": "Vento / Água",
+    "elements": [
+      "wind",
+      "water"
+    ],
     "stage": 1,
     "description": "As algas misturadas à alimentação dos Pius tingem as penas deles com a cor das ondas.",
     "image": "/aniimo/007-beach.webp",
@@ -1158,6 +1461,10 @@
     "kind": "regional",
     "name": "Trombico",
     "element": "Vento / Planta",
+    "elements": [
+      "wind",
+      "grass"
+    ],
     "stage": 3,
     "description": "Os Trombicos que vivem nas terras altas adoram passear sob a luz do sol, tocando melodias com os chifres em forma de flor ao som da brisa das montanhas.",
     "image": "/aniimo/008-highland.webp",
@@ -1170,6 +1477,10 @@
     "kind": "regional",
     "name": "Trombico",
     "element": "Vento / Água",
+    "elements": [
+      "wind",
+      "water"
+    ],
     "stage": 3,
     "description": "Eles adoram caminhar sob a brisa do mar e estão sempre de bom humor. Às vezes, simplesmente começam a brincar e dançar.",
     "image": "/aniimo/008-beach.webp",
@@ -1182,6 +1493,10 @@
     "kind": "regional",
     "name": "Bicorneta",
     "element": "Vento / Planta",
+    "elements": [
+      "wind",
+      "grass"
+    ],
     "stage": 3,
     "description": "Os Bicornetas das terras altas gostam de sobrevoar os céus ao amanhecer, acordando todos com gritos altos e fazendo pouco caso das reclamações que recebem.",
     "image": "/aniimo/009-highland.webp",
@@ -1194,6 +1509,10 @@
     "kind": "regional",
     "name": "Bicorneta",
     "element": "Vento / Água",
+    "elements": [
+      "wind",
+      "water"
+    ],
     "stage": 3,
     "description": "No alto de um recife, eles tentam fazer com que sua voz alcance distâncias maiores, como se um eco pudesse vir do outro lado do mar.",
     "image": "/aniimo/009-beach.webp",
@@ -1206,6 +1525,10 @@
     "kind": "regional",
     "name": "Tubico",
     "element": "Vento / Planta",
+    "elements": [
+      "wind",
+      "grass"
+    ],
     "stage": 3,
     "description": "Os Tubicos que habitam as terras altas decoram o ambiente com folhas de grama enroladas. Quando o som de sua trompa ressoa, o entretenimento está garantido.",
     "image": "/aniimo/010-highland.webp",
@@ -1218,6 +1541,10 @@
     "kind": "regional",
     "name": "Tubico",
     "element": "Vento / Água",
+    "elements": [
+      "wind",
+      "water"
+    ],
     "stage": 3,
     "description": "Quando começam a tocar, as ondas passam a seguir o ritmo, dando a impressão de que o mar responde à sua melodia.",
     "image": "/aniimo/010-beach.webp",
@@ -1230,6 +1557,9 @@
     "kind": "regional",
     "name": "Íris",
     "element": "Planta",
+    "elements": [
+      "grass"
+    ],
     "stage": 1,
     "description": "Vivendo nas terras altas, estas Íris absorvem os minerais abundantes do solo, adquirindo a coloração vibrante das folhas de bordo.",
     "image": "/aniimo/011-highland.webp",
@@ -1242,6 +1572,9 @@
     "kind": "regional",
     "name": "Íris",
     "element": "Planta",
+    "elements": [
+      "grass"
+    ],
     "stage": 1,
     "description": "As Íris que vivem nas florestas montanhosas dançam entre os arbustos verdejantes, as pétalas brilhando em um tom vibrante de verde.",
     "image": "/aniimo/011-mountain-woods.webp",
@@ -1254,6 +1587,9 @@
     "kind": "regional",
     "name": "Íris",
     "element": "Planta",
+    "elements": [
+      "grass"
+    ],
     "stage": 1,
     "description": "Estas Íris vivem na Floresta de Estrelas Cadentes. Gostam de descansar sob as árvores, e seus estames se iluminam ao cair da noite.",
     "image": "/aniimo/011-forest.webp",
@@ -1266,6 +1602,9 @@
     "kind": "regional",
     "name": "Íris",
     "element": "Planta",
+    "elements": [
+      "grass"
+    ],
     "stage": 1,
     "description": "Estas Íris vivem nos Campos de Nimbo. Gostam de aproveitar o sol dos prados e, sem perceber, acabam recolhendo tufos de lã em suas pétalas.",
     "image": "/aniimo/011-grassland.webp",
@@ -1278,6 +1617,9 @@
     "kind": "regional",
     "name": "Íris",
     "element": "Planta",
+    "elements": [
+      "grass"
+    ],
     "stage": 1,
     "description": "As Íris que vivem nas terras altas têm pétalas azul-escuras salpicadas de neve fina. Florescem mesmo sob o frio intenso e balançam livremente ao vento.",
     "image": "/aniimo/011-plateau.webp",
@@ -1290,6 +1632,9 @@
     "kind": "regional",
     "name": "Irisal",
     "element": "Planta",
+    "elements": [
+      "grass"
+    ],
     "stage": 2,
     "description": "Evoluídas das Íris das terras altas, elas absorvem os minerais abundantes do solo, adquirindo a coloração vibrante das folhas de bordo.",
     "image": "/aniimo/012-highland.webp",
@@ -1302,6 +1647,9 @@
     "kind": "regional",
     "name": "Irisal",
     "element": "Planta",
+    "elements": [
+      "grass"
+    ],
     "stage": 2,
     "description": "Evoluídas das Íris das florestas montanhosas. Nutridas pela natureza selvagem, adquiriram uma coloração verdejante elegante e parecem liberar o aroma de grama e árvore enquanto dançam.",
     "image": "/aniimo/012-mountain-woods.webp",
@@ -1314,6 +1662,9 @@
     "kind": "regional",
     "name": "Irisal",
     "element": "Planta",
+    "elements": [
+      "grass"
+    ],
     "stage": 2,
     "description": "Evoluídas das Íris que vivem na Floresta de Estrelas Cadentes, estas dançarinas da lua espalham pólen luminoso enquanto dançam.",
     "image": "/aniimo/012-forest.webp",
@@ -1326,6 +1677,9 @@
     "kind": "regional",
     "name": "Irisal",
     "element": "Planta",
+    "elements": [
+      "grass"
+    ],
     "stage": 2,
     "description": "Evoluídas das Íris que habitam os Campos de Nimbo, suas danças transbordam vitalidade após se aquecerem sob o sol.",
     "image": "/aniimo/012-grassland.webp",
@@ -1338,6 +1692,9 @@
     "kind": "regional",
     "name": "Irisal",
     "element": "Planta",
+    "elements": [
+      "grass"
+    ],
     "stage": 2,
     "description": "Evoluídas das Íris das terras altas. O orvalho frio congela nas bordas das pétalas azul-escuras, dançando com a saia como neve flutuante.",
     "image": "/aniimo/012-plateau.webp",
@@ -1350,6 +1707,10 @@
     "kind": "regional",
     "name": "Saltilótus",
     "element": "Água / Gelo",
+    "elements": [
+      "water",
+      "ice"
+    ],
     "stage": 1,
     "description": "Saltilótus que vivem em regiões geladas não sentem o frio da neve e apreciam a sensação fresca do chapéu de folha de lótus congelada na cabeça.",
     "image": "/aniimo/013-snowfield.webp",
@@ -1362,6 +1723,9 @@
     "kind": "regional",
     "name": "Saltilótus",
     "element": "Água",
+    "elements": [
+      "water"
+    ],
     "stage": 1,
     "description": "Saltilótus que habitam o Mar de Flores consomem pétalas. Seus pigmentos se acumulam lentamente no corpo, tingindo as folhas na cabeça e a pele com um rosa-avermelhado delicado.",
     "image": "/aniimo/013-sea-of-flowers.webp",
@@ -1374,6 +1738,10 @@
     "kind": "regional",
     "name": "Saltravesso",
     "element": "Água / Gelo",
+    "elements": [
+      "water",
+      "ice"
+    ],
     "stage": 2,
     "description": "Saltravessos que vivem em regiões frias apresentam gelo nas brânquias e nas nadadeiras da cauda, enquanto as membranas ficam acolchoadas com neve, parecendo mais grossas.",
     "image": "/aniimo/014-snowfield.webp",
@@ -1386,6 +1754,9 @@
     "kind": "regional",
     "name": "Saltravesso",
     "element": "Água",
+    "elements": [
+      "water"
+    ],
     "stage": 2,
     "description": "O corpo rosado se mistura perfeitamente ao mar de flores, enquanto as folhas branquiais balançam como galhos floridos ao vento.",
     "image": "/aniimo/014-sea-of-flowers.webp",
@@ -1398,6 +1769,10 @@
     "kind": "regional",
     "name": "Géli",
     "element": "Água / Gelo",
+    "elements": [
+      "water",
+      "ice"
+    ],
     "stage": 3,
     "description": "Gélis que vivem em regiões frias têm brânquias e nadadeiras da cauda cobertas por camadas sólidas de gelo. O frio cortante anuncia a majestade do Senhor do Gelo e da Neve.",
     "image": "/aniimo/015-snowfield.webp",
@@ -1410,6 +1785,10 @@
     "kind": "regional",
     "name": "Géli",
     "element": "Água / Gelo",
+    "elements": [
+      "water",
+      "ice"
+    ],
     "stage": 3,
     "description": "Evoluído do Saltravesso do Mar de Flores, tem o corpo rosa etéreo. Ao correr, as membranas nas costas ondulam como ondas cor-de-rosa intermináveis.",
     "image": "/aniimo/015-sea-of-flowers.webp",
@@ -1422,6 +1801,10 @@
     "kind": "regional",
     "name": "Nimbi",
     "element": "Vento / Elétrico",
+    "elements": [
+      "wind",
+      "electric"
+    ],
     "stage": 1,
     "description": "Ao absorver água, a pelagem muda de cor e torna-se condutiva, capaz de armazenar raios no interior.",
     "image": "/aniimo/017-rainstorm.webp",
@@ -1434,6 +1817,10 @@
     "kind": "regional",
     "name": "Nimbi",
     "element": "Vento / Gelo",
+    "elements": [
+      "wind",
+      "ice"
+    ],
     "stage": 1,
     "description": "Naturalmente melancólicos e avessos a perturbações, gostam de se encolher em cantos, envoltos em nuvens de tristeza.",
     "image": "/aniimo/017-plateau.webp",
@@ -1446,6 +1833,9 @@
     "kind": "regional",
     "name": "Nimbi",
     "element": "Vento",
+    "elements": [
+      "wind"
+    ],
     "stage": 1,
     "description": "Parecem preferir a fragrância da Margarida Solar à da grama, o que deu um leve tom dourado à sua lã, fazendo-a absorver mais calor que a lã branca pura.",
     "image": "/aniimo/017-cloudmist.webp",
@@ -1458,6 +1848,10 @@
     "kind": "regional",
     "name": "Turbo",
     "element": "Vento / Elétrico",
+    "elements": [
+      "wind",
+      "electric"
+    ],
     "stage": 2,
     "description": "Assim como nuvens de tempestade, a eletricidade cintila em sua pelagem e, quando irritados, podem atingir aleatoriamente quem passa por perto.",
     "image": "/aniimo/018-rainstorm.webp",
@@ -1470,6 +1864,10 @@
     "kind": "regional",
     "name": "Turbo",
     "element": "Vento / Gelo",
+    "elements": [
+      "wind",
+      "ice"
+    ],
     "stage": 2,
     "description": "A pelagem envolve o frio e seu mau humor. O frio que se espalha de dentro cobre os chifres com gelo.",
     "image": "/aniimo/018-plateau.webp",
@@ -1482,6 +1880,9 @@
     "kind": "regional",
     "name": "Turbo",
     "element": "Vento",
+    "elements": [
+      "wind"
+    ],
     "stage": 2,
     "description": "Preferem dormir flutuando nas camadas superiores das nuvens Nimbus, onde recebem os primeiros raios do dia e banham-se em luz dourada no mar de nuvens.",
     "image": "/aniimo/018-cloudmist.webp",
@@ -1494,6 +1895,9 @@
     "kind": "regional",
     "name": "Ervazum",
     "element": "Planta",
+    "elements": [
+      "grass"
+    ],
     "stage": 1,
     "description": "Sob a influência da terra, sua pele fica mais espessa e adquire um tom vermelho mineral, ajudando a manter o corpo hidratado.",
     "image": "/aniimo/020-mountain.webp",
@@ -1506,6 +1910,10 @@
     "kind": "regional",
     "name": "Ervassom",
     "element": "Sombra / Planta",
+    "elements": [
+      "dark",
+      "grass"
+    ],
     "stage": 2,
     "description": "A maior exposição ao sol e as mudanças nos minerais do solo tingiram sua pele de um tom laranja-avermelhado intenso e deixaram as flores em sua cabeça ainda mais vibrantes.",
     "image": "/aniimo/021-mountain.webp",
@@ -1518,6 +1926,10 @@
     "kind": "regional",
     "name": "Tuberô",
     "element": "Pedra / Planta",
+    "elements": [
+      "rock",
+      "grass"
+    ],
     "stage": 2,
     "description": "As mudanças na composição do solo fizeram sua pele adquirir um tom laranja-avermelhado após absorver minerais da terra, tornando-a mais espessa e robusta.",
     "image": "/aniimo/022-mountain.webp",
@@ -1530,6 +1942,9 @@
     "kind": "regional",
     "name": "Florigarra",
     "element": "Pedra",
+    "elements": [
+      "rock"
+    ],
     "stage": 1,
     "description": "Criam perucas de areia, decoram a pelagem com pedrinhas bonitas e trocam pedras entre si como forma de amizade.",
     "image": "/aniimo/023-mudflat.webp",
@@ -1542,6 +1957,9 @@
     "kind": "regional",
     "name": "Florigarra",
     "element": "Pedra",
+    "elements": [
+      "rock"
+    ],
     "stage": 1,
     "description": "Para Florigarras que vivem na praia, usar casca de coco é uma escolha óbvia, tanto para proteção quanto para camuflagem.",
     "image": "/aniimo/023-beach.webp",
@@ -1554,6 +1972,9 @@
     "kind": "regional",
     "name": "Florigarra",
     "element": "Pedra",
+    "elements": [
+      "rock"
+    ],
     "stage": 1,
     "description": "Florigarras que vivem em baías costeiras adoram tomar sol até as conchas ficarem vermelhas, usando a coloração vibrante para atrair parceiros.",
     "image": "/aniimo/023-bay.webp",
@@ -1566,6 +1987,9 @@
     "kind": "regional",
     "name": "Plantogarra",
     "element": "Pedra",
+    "elements": [
+      "rock"
+    ],
     "stage": 2,
     "description": "Montes de areia ficam pelo chão quando cavam túneis e é irritante que alguém continue roubando suas pedrinhas.",
     "image": "/aniimo/024-mudflat.webp",
@@ -1578,6 +2002,9 @@
     "kind": "regional",
     "name": "Plantogarra",
     "element": "Pedra",
+    "elements": [
+      "rock"
+    ],
     "stage": 2,
     "description": "Os frutos nas costas do Plantogarra caem na areia quando amadurecem, tornando-se alimento e abrigo para Florigarras.",
     "image": "/aniimo/024-beach.webp",
@@ -1590,6 +2017,9 @@
     "kind": "regional",
     "name": "Plantogarra",
     "element": "Pedra",
+    "elements": [
+      "rock"
+    ],
     "stage": 2,
     "description": "Evoluído de um Florigarra das baías, mantém o hábito de tomar sol, embora a exposição excessiva tenha desidratado e descolorido as plantas na cabeça dele.",
     "image": "/aniimo/024-bay.webp",
@@ -1602,6 +2032,9 @@
     "kind": "regional",
     "name": "Foguéu",
     "element": "Fogo",
+    "elements": [
+      "fire"
+    ],
     "stage": 1,
     "description": "Adoram pregar peças, especialmente ao se esgueirar e assustar os outros à noite. Ficam chateados se a brincadeira não funciona.",
     "image": "/aniimo/026-highland.webp",
@@ -1614,6 +2047,9 @@
     "kind": "regional",
     "name": "Foguéu",
     "element": "Fogo",
+    "elements": [
+      "fire"
+    ],
     "stage": 1,
     "description": "Foguéus com cor diferente após absorverem pólen como combustível. Tenha cuidado com eles no Mar de Flores à noite.",
     "image": "/aniimo/026-sea-of-flowers.webp",
@@ -1626,6 +2062,9 @@
     "kind": "regional",
     "name": "Foguéu",
     "element": "Fogo",
+    "elements": [
+      "fire"
+    ],
     "stage": 1,
     "description": "Foguéus com cor diferente após absorverem a névoa como combustível. Não os siga na névoa, ou você pode se perder.",
     "image": "/aniimo/026-forest.webp",
@@ -1638,6 +2077,9 @@
     "kind": "regional",
     "name": "Flamérion",
     "element": "Fogo",
+    "elements": [
+      "fire"
+    ],
     "stage": 2,
     "description": "Flamérions com coloração diferente devido à alteração na composição de seus gases. À noite, gostam de espreitar e assustar outros.",
     "image": "/aniimo/027-highland.webp",
@@ -1650,6 +2092,9 @@
     "kind": "regional",
     "name": "Flamérion",
     "element": "Fogo",
+    "elements": [
+      "fire"
+    ],
     "stage": 2,
     "description": "Flamérions com coloração diferente após absorverem pólen como combustível. Podem fazer flores parecerem estar em chamas.",
     "image": "/aniimo/027-sea-of-flowers.webp",
@@ -1662,6 +2107,9 @@
     "kind": "regional",
     "name": "Flamérion",
     "element": "Fogo",
+    "elements": [
+      "fire"
+    ],
     "stage": 2,
     "description": "Flamérions com coloração diferente após absorverem névoa como combustível. O truque deles é fingir que são plantas luminosas.",
     "image": "/aniimo/027-forest.webp",
@@ -1674,6 +2122,10 @@
     "kind": "regional",
     "name": "Borboscama",
     "element": "Vento / Pedra",
+    "elements": [
+      "wind",
+      "rock"
+    ],
     "stage": 1,
     "description": "Aniimos naturalmente tímidos, com asas que imitam a forma e a cor de folhas mortas, permitindo que se escondam rapidamente entre folhas caídas.",
     "image": "/aniimo/028-mountain-woods.webp",
@@ -1686,6 +2138,10 @@
     "kind": "regional",
     "name": "Borboscama",
     "element": "Sombra / Vento",
+    "elements": [
+      "dark",
+      "wind"
+    ],
     "stage": 1,
     "description": "Adoram flores que desabrocham à noite, e as cores da noite tingem suas asas para melhorar a camuflagem.",
     "image": "/aniimo/028-nighttime.webp",
@@ -1698,6 +2154,10 @@
     "kind": "regional",
     "name": "Borboscama",
     "element": "Vento / Planta",
+    "elements": [
+      "wind",
+      "grass"
+    ],
     "stage": 1,
     "description": "Estes habitantes do Mar de Flores têm asas roxas e antenas em forma de espigas de flores, usadas para camuflagem.",
     "image": "/aniimo/028-sea-of-flowers.webp",
@@ -1710,6 +2170,10 @@
     "kind": "regional",
     "name": "Borbograça",
     "element": "Vento / Pedra",
+    "elements": [
+      "wind",
+      "rock"
+    ],
     "stage": 2,
     "description": "Aniimos que habitam florestas caducifólias com asas em camadas que lembram folhas mortas. Costumam descansar sobre pilhas de folhas, sob a luz do outono, com aparência sonolenta.",
     "image": "/aniimo/029-mountain-woods.webp",
@@ -1722,6 +2186,10 @@
     "kind": "regional",
     "name": "Borbograça",
     "element": "Sombra / Vento",
+    "elements": [
+      "dark",
+      "wind"
+    ],
     "stage": 2,
     "description": "Podem se camuflar perfeitamente na noite, e as escamas luminosas confundem inimigos enquanto sinalizam aos aliados.",
     "image": "/aniimo/029-nighttime.webp",
@@ -1734,6 +2202,10 @@
     "kind": "regional",
     "name": "Borbograça",
     "element": "Vento / Planta",
+    "elements": [
+      "wind",
+      "grass"
+    ],
     "stage": 2,
     "description": "Voam entre as flores e espalham pólen com as asas, por isso suas escamas têm cheiro de flores.",
     "image": "/aniimo/029-sea-of-flowers.webp",
@@ -1746,6 +2218,9 @@
     "kind": "regional",
     "name": "Brotescudeiro",
     "element": "Planta",
+    "elements": [
+      "grass"
+    ],
     "stage": 1,
     "description": "O espinho na mão do Brotescudeiro pode até ser macio e frágil, mas sua coragem não. Para proteger o que ama, ele sai no encalço de Espilâmina sem hesitar.",
     "image": "/aniimo/033-towerwood.webp",
@@ -1758,6 +2233,10 @@
     "kind": "regional",
     "name": "Espilâmina",
     "element": "Planta / Elétrico",
+    "elements": [
+      "grass",
+      "electric"
+    ],
     "stage": 3,
     "description": "Esses assassinos de sangue frio aprimoram suas habilidades em noites chuvosas, com olhos afiados como um relâmpago. Quando cravam o olhar na presa, o alvo já foi marcado.",
     "image": "/aniimo/034-thunderstorm.webp",
@@ -1770,6 +2249,9 @@
     "kind": "regional",
     "name": "Espilâmina",
     "element": "Planta",
+    "elements": [
+      "grass"
+    ],
     "stage": 2,
     "description": "Com um coração inabalável, ele se tornou um verdadeiro cavaleiro por conta própria. Espilâmina vai honrar seu juramento de proteger e expulsar todo e qualquer intruso.",
     "image": "/aniimo/034-towerwood.webp",
@@ -1782,6 +2264,9 @@
     "kind": "regional",
     "name": "Leleovo",
     "element": "Planta",
+    "elements": [
+      "grass"
+    ],
     "stage": 1,
     "description": "Os Leleovos das terras altas usam folhas secas empilhadas na cabeça para se camuflar. Porém, como isso atrapalha a visão, acabam às vezes escorregando e rolando pelas encostas.",
     "image": "/aniimo/036-highland.webp",
@@ -1794,6 +2279,10 @@
     "kind": "regional",
     "name": "Leleovo",
     "element": "Planta / Gelo",
+    "elements": [
+      "grass",
+      "ice"
+    ],
     "stage": 1,
     "description": "Os Leleovos tremem no frio intenso, com o nariz escorrendo na neve. Para se camuflar, equilibram bolas de neve sobre a cabeça, parecendo bonequinhos de neve quando se escondem dentro das conchas.",
     "image": "/aniimo/036-snowfield.webp",
@@ -1806,6 +2295,9 @@
     "kind": "regional",
     "name": "Leleovo",
     "element": "Planta",
+    "elements": [
+      "grass"
+    ],
     "stage": 1,
     "description": "Os Leleovos que vivem no Mar de Flores carregam flores sobre a cabeça para se camuflar. O corpo deles absorve os pigmentos das pétalas, adquirindo um tom rosa-claro delicado.",
     "image": "/aniimo/036-sea-of-flowers.webp",
@@ -1818,6 +2310,9 @@
     "kind": "regional",
     "name": "Rugissauro",
     "element": "Planta",
+    "elements": [
+      "grass"
+    ],
     "stage": 2,
     "description": "Vagam pelos campos das terras altas com jubas rígidas em forma de folhas de sicômoro. As folhas balançam ao vento, farfalhando junto de suas vozes roucas.",
     "image": "/aniimo/037-highland.webp",
@@ -1830,6 +2325,10 @@
     "kind": "regional",
     "name": "Rugissauro",
     "element": "Planta / Gelo",
+    "elements": [
+      "grass",
+      "ice"
+    ],
     "stage": 2,
     "description": "O clima congelante transforma as jubas em espinhos de gelo, evidenciando a natureza rebelde. A pele que trocam forma um traje justo, ajudando a manter tanto estilo quanto calor no frio.",
     "image": "/aniimo/037-snowfield.webp",
@@ -1842,6 +2341,9 @@
     "kind": "regional",
     "name": "Rugissauro",
     "element": "Planta",
+    "elements": [
+      "grass"
+    ],
     "stage": 2,
     "description": "Evoluídos dos Leleovos do Mar de Flores. A pele continua vibrante mesmo após a troca, mas os espinhos na cabeça revelam a personalidade bastante “espinhosa”.",
     "image": "/aniimo/037-sea-of-flowers.webp",
@@ -1854,6 +2356,10 @@
     "kind": "regional",
     "name": "Centélis",
     "element": "Fogo / Sombra",
+    "elements": [
+      "fire",
+      "dark"
+    ],
     "stage": 1,
     "description": "Eles afiam as garras até ficarem incandescentes, deixando um brilho flamejante nos ataques. As chamas ardem enquanto giram e voam pela floresta, aprimorando suas técnicas.",
     "image": "/aniimo/040-highland.webp",
@@ -1866,6 +2372,10 @@
     "kind": "regional",
     "name": "Centélis",
     "element": "Sombra / Planta",
+    "elements": [
+      "dark",
+      "grass"
+    ],
     "stage": 1,
     "description": "Os fungos na névoa tingem suas conchas de um verde-acinzentado e espalham esporos ao baterem as asas.",
     "image": "/aniimo/040-forest.webp",
@@ -1878,6 +2388,10 @@
     "kind": "regional",
     "name": "Ignítis",
     "element": "Fogo / Sombra",
+    "elements": [
+      "fire",
+      "dark"
+    ],
     "stage": 2,
     "description": "Ao afiar as lâminas duplas, acumulam calor que é liberado no momento do ataque, causando cortes e queimaduras.",
     "image": "/aniimo/041-highland.webp",
@@ -1890,6 +2404,10 @@
     "kind": "regional",
     "name": "Ignítis",
     "element": "Sombra / Planta",
+    "elements": [
+      "dark",
+      "grass"
+    ],
     "stage": 2,
     "description": "A infecção por fungos deformou suas conchas e revestiu suas asas com esporos que se espalham a cada batida.",
     "image": "/aniimo/041-forest.webp",
@@ -1902,6 +2420,10 @@
     "kind": "regional",
     "name": "Gelosso",
     "element": "Sombra / Gelo",
+    "elements": [
+      "dark",
+      "ice"
+    ],
     "stage": 1,
     "description": "Jovem Gelosso adaptado à vida noturna. A pelagem escurecida serve de camuflagem, enquanto os olhos carmesim perfuram a escuridão.",
     "image": "/aniimo/042-nighttime.webp",
@@ -1914,6 +2436,10 @@
     "kind": "regional",
     "name": "Gelâmina",
     "element": "Sombra / Gelo",
+    "elements": [
+      "dark",
+      "ice"
+    ],
     "stage": 2,
     "description": "A pelagem cinza-escura se funde à noite, exceto por uma mancha vermelho-sangue na base da cauda que, junto aos olhos carmesim, sinaliza perigo.",
     "image": "/aniimo/043-nighttime.webp",
@@ -1926,6 +2452,10 @@
     "kind": "regional",
     "name": "Gelispada",
     "element": "Sombra / Gelo",
+    "elements": [
+      "dark",
+      "ice"
+    ],
     "stage": 3,
     "description": "Um caçador arrogante sob a lua. A lâmina de gelo entre os dentes brilha fria na noite, afiada como geada condensada.",
     "image": "/aniimo/044-nighttime.webp",
@@ -1938,6 +2468,9 @@
     "kind": "regional",
     "name": "Raí",
     "element": "Elétrico",
+    "elements": [
+      "electric"
+    ],
     "stage": 1,
     "description": "Vivendo em regiões de bosque ensolaradas, a coloração mais clara ajuda a evitar o excesso de calor, enquanto a pelagem marrom-dourada permite que se camufle no ambiente.",
     "image": "/aniimo/045-mountain-woods.webp",
@@ -1950,6 +2483,9 @@
     "kind": "regional",
     "name": "Pelirraio",
     "element": "Elétrico",
+    "elements": [
+      "electric"
+    ],
     "stage": 2,
     "description": "Evoluídos dos Raís das florestas montanhosas, têm o corpo mais claro e pelagem dourado-acastanhada em camadas entrelaçadas que desorienta os adversários.",
     "image": "/aniimo/046-mountain-woods.webp",
@@ -1962,6 +2498,9 @@
     "kind": "regional",
     "name": "Timilontra",
     "element": "Água",
+    "elements": [
+      "water"
+    ],
     "stage": 1,
     "description": "As olheiras sob os olhos vêm de cavar tesouros durante a noite, e a pelagem ficou negra como a noite.",
     "image": "/aniimo/049-nighttime.webp",
@@ -1974,6 +2513,9 @@
     "kind": "regional",
     "name": "Conchilontra",
     "element": "Água",
+    "elements": [
+      "water"
+    ],
     "stage": 2,
     "description": "Essas Conchilontras passam as noites pensando em suas paixões, e a pelagem ficou incolor devido ao humor amargo.",
     "image": "/aniimo/050-nighttime.webp",
@@ -1986,6 +2528,10 @@
     "kind": "regional",
     "name": "Marilontra",
     "element": "Sombra / Água",
+    "elements": [
+      "dark",
+      "water"
+    ],
     "stage": 3,
     "description": "A falta de exposição ao sol deixa a pelagem incolor, pois só saem para encontros à noite, o que acaba dando um visual estiloso.",
     "image": "/aniimo/051-nighttime.webp",
@@ -1998,6 +2544,9 @@
     "kind": "regional",
     "name": "Musculontra",
     "element": "Água",
+    "elements": [
+      "water"
+    ],
     "stage": 3,
     "description": "Musculontras gostam de procurar conchas decorativas na praia à noite, o que explica as olheiras sob os olhos.",
     "image": "/aniimo/052-nighttime.webp",
@@ -2010,6 +2559,10 @@
     "kind": "regional",
     "name": "Conchastro",
     "element": "Elétrico / Água",
+    "elements": [
+      "electric",
+      "water"
+    ],
     "stage": 3,
     "description": "Os Conchastros nascidos das tempestades absorvem relâmpagos por meio de antenas e observam do alto o mar que protegem como reis.",
     "image": "/aniimo/055-thunderstorm.webp",
@@ -2022,6 +2575,10 @@
     "kind": "regional",
     "name": "Bolisouro",
     "element": "Pedra / Gelo",
+    "elements": [
+      "rock",
+      "ice"
+    ],
     "stage": 1,
     "description": "Bolisouros na neve empurram as bolas de pedra que têm desde o nascimento e, envoltos em gelo e neve espessa, realizam acrobacias difíceis no gelo.",
     "image": "/aniimo/056-snowfield.webp",
@@ -2034,6 +2591,10 @@
     "kind": "regional",
     "name": "Murisouro",
     "element": "Pedra / Gelo",
+    "elements": [
+      "rock",
+      "ice"
+    ],
     "stage": 2,
     "description": "Murisouros em alta velocidade na neve envolvem as bolas de neve com espinhos congelados como correntes para evitar que capotem no gelo liso.",
     "image": "/aniimo/057-snowfield.webp",
@@ -2046,6 +2607,10 @@
     "kind": "regional",
     "name": "Gulho",
     "element": "Pedra / Gelo",
+    "elements": [
+      "rock",
+      "ice"
+    ],
     "stage": 2,
     "description": "Gulhos que vivem nos campos de neve. Rolam constantemente na neve, comprimindo a geada no corpo em cristais de gelo, incluindo o rabanete que surgiu do nada.",
     "image": "/aniimo/058-snowfield.webp",
@@ -2058,6 +2623,9 @@
     "kind": "regional",
     "name": "Olhelmo",
     "element": "Sombra",
+    "elements": [
+      "dark"
+    ],
     "stage": 1,
     "description": "Olhelmo corajoso que, após inúmeras colisões, poliu o capacete até fazê-lo brilhar, revelando a aparência que tinha antes de ser tomado pela ferrugem do tempo.",
     "image": "/aniimo/061-mountain-woods.webp",
@@ -2070,6 +2638,10 @@
     "kind": "regional",
     "name": "Olhelmo",
     "element": "Sombra / Gelo",
+    "elements": [
+      "dark",
+      "ice"
+    ],
     "stage": 1,
     "description": "Os Olhelmos mais inteligentes gostam de forrar o capacete com a pelagem de outros Aniimos para se manterem aquecidos até mesmo durante invernos congelantes.",
     "image": "/aniimo/061-snowfield.webp",
@@ -2082,6 +2654,9 @@
     "kind": "regional",
     "name": "Peônio",
     "element": "Sombra",
+    "elements": [
+      "dark"
+    ],
     "stage": 2,
     "description": "Movido pela obsessão de enfrentar inimigos fortes, cada ataque sofrido deixa a armadura mais brilhante, até formar uma esplêndida armadura dourada de batalha.",
     "image": "/aniimo/062-mountain-woods.webp",
@@ -2094,6 +2669,10 @@
     "kind": "regional",
     "name": "Peônio",
     "element": "Sombra / Gelo",
+    "elements": [
+      "dark",
+      "ice"
+    ],
     "stage": 2,
     "description": "Remodelam espadas em machados e revestem as articulações com pelos de outros Aniimos para suportar o inverno.",
     "image": "/aniimo/062-snowfield.webp",
@@ -2106,6 +2685,9 @@
     "kind": "regional",
     "name": "Guerrônio",
     "element": "Sombra",
+    "elements": [
+      "dark"
+    ],
     "stage": 2,
     "description": "Carregando a missão de proteger o clã, sua armadura foi polida até o dourado depois de bloquear incontáveis ataques, emitindo a luz da coragem.",
     "image": "/aniimo/063-mountain-woods.webp",
@@ -2118,6 +2700,10 @@
     "kind": "regional",
     "name": "Guerrônio",
     "element": "Sombra / Gelo",
+    "elements": [
+      "dark",
+      "ice"
+    ],
     "stage": 2,
     "description": "Eles forram a armadura com a pelagem de outros Aniimos para se manterem aquecidos e terem mais tração na neve ao se enrolar.",
     "image": "/aniimo/063-snowfield.webp",
@@ -2130,6 +2716,9 @@
     "kind": "regional",
     "name": "Mordelino",
     "element": "Vento",
+    "elements": [
+      "wind"
+    ],
     "stage": 1,
     "description": "Adora afiar os dentes em minérios de metal. Os elementos metálicos que consome deixam toda a pele mais resistente, e a mandíbula se torna completamente metálica.",
     "image": "/aniimo/064-mountain.webp",
@@ -2142,6 +2731,9 @@
     "kind": "regional",
     "name": "Elmelino",
     "element": "Vento",
+    "elements": [
+      "wind"
+    ],
     "stage": 2,
     "description": "Evoluído do Mordelino que habita as montanhas, o capacete é várias vezes mais duro que a pele, protegendo-o de rochas afiadas enquanto procura minerais de metal.",
     "image": "/aniimo/065-mountain.webp",
@@ -2154,6 +2746,9 @@
     "kind": "regional",
     "name": "Elmedon",
     "element": "Vento",
+    "elements": [
+      "wind"
+    ],
     "stage": 3,
     "description": "Evoluído do Elmelino que habita as montanhas, coleta incansavelmente objetos dourados, ansiando por revestir todo o corpo com um brilho dourado esplêndido.",
     "image": "/aniimo/066-mountain.webp",
@@ -2166,6 +2761,10 @@
     "kind": "regional",
     "name": "Luminela",
     "element": "Elétrico / Água",
+    "elements": [
+      "electric",
+      "water"
+    ],
     "stage": 3,
     "description": "Dependem de umidade constante na pele e, como a água só escapa pelos olhos, parecem estar sempre chorando.",
     "image": "/aniimo/079-rainstorm.webp",
@@ -2178,6 +2777,9 @@
     "kind": "prismana",
     "name": "Labaruivo",
     "element": "Fogo",
+    "elements": [
+      "fire"
+    ],
     "stage": 3,
     "description": "A energia prismana puxa o poder das chamas das cicatrizes no peito deles e envolve os corpos numa labareda ofuscante que fica mais quente à medida em que você se aproxima.",
     "image": "/aniimo/003-prismana.webp",
@@ -2190,6 +2792,10 @@
     "kind": "prismana",
     "name": "Inferlobo",
     "element": "Fogo / Sombra",
+    "elements": [
+      "fire",
+      "dark"
+    ],
     "stage": 3,
     "description": "Impulsionadas por Prismana, as chamas da Vingança ardem cada vez mais ferozes, calcinando o corpo de Inferlobo. As cabeças-alma Nubilantes ao seu lado soltam uivos frenéticos, liberando uma aura gélida de pressão avassaladora que incute medo no Coração.",
     "image": "/aniimo/004-prismana.webp",
@@ -2202,6 +2808,10 @@
     "kind": "prismana",
     "name": "Esteláris",
     "element": "Sombra / Gelo",
+    "elements": [
+      "dark",
+      "ice"
+    ],
     "stage": 3,
     "description": "Graças ao prismana, as capas de alguns Esteláris ganham as cores do arco-íris e eles se tornam mais fortes.",
     "image": "/aniimo/006-prismana.webp",
@@ -2214,6 +2824,10 @@
     "kind": "prismana",
     "name": "Bicorneta",
     "element": "Vento / Elétrico",
+    "elements": [
+      "wind",
+      "electric"
+    ],
     "stage": 3,
     "description": "O prismana aprimorou os órgãos vocais deles, permitindo que imitem o som de outros instrumentos para acompanhar as próprias melodias.",
     "image": "/aniimo/009-prismana.webp",
@@ -2226,6 +2840,9 @@
     "kind": "prismana",
     "name": "Íris",
     "element": "Planta",
+    "elements": [
+      "grass"
+    ],
     "stage": 1,
     "description": "O prismana mistura cores diferentes e as transforma em vitalidade, cultivando flores únicas e mantendo viva a linda lenda no Mar de Flores.",
     "image": "/aniimo/011-prismana.webp",
@@ -2238,6 +2855,9 @@
     "kind": "prismana",
     "name": "Irisal",
     "element": "Planta",
+    "elements": [
+      "grass"
+    ],
     "stage": 2,
     "description": "As cores iridescentes do prismana fluem por cada artéria, resplandecendo em um brilho deslumbrante. Uma saia eterna dança sobre a terra, espalhando mais luz por onde passa.",
     "image": "/aniimo/012-prismana.webp",
@@ -2250,6 +2870,10 @@
     "kind": "prismana",
     "name": "Géli",
     "element": "Luz / Água",
+    "elements": [
+      "holy",
+      "water"
+    ],
     "stage": 3,
     "description": "O poder do prismana flui suavemente pelo Géli, como a luz do sol atravessando o corpo e se espalhando pelas escamas em cores radiantes.",
     "image": "/aniimo/015-prismana.webp",
@@ -2262,6 +2886,10 @@
     "kind": "prismana",
     "name": "Turbo",
     "element": "Sombra / Vento",
+    "elements": [
+      "dark",
+      "wind"
+    ],
     "stage": 3,
     "description": "Depois de absorver energia prismana, a lã do Turbo fica tingida com as cores de uma noite estrelada, fazendo as nuvens ao redor brilharem.",
     "image": "/aniimo/018-prismana.webp",
@@ -2274,6 +2902,10 @@
     "kind": "prismana",
     "name": "Ervassom",
     "element": "Sombra / Planta",
+    "elements": [
+      "dark",
+      "grass"
+    ],
     "stage": 3,
     "description": "A energia prismana se concentra nas artérias, fazendo o corpo de Ervassom e o interior do chapéu de folha dele brilharem com uma luz hipnotizante que fortalece sua capacidade de perturbar as mentes.",
     "image": "/aniimo/021-prismana.webp",
@@ -2286,6 +2918,10 @@
     "kind": "prismana",
     "name": "Espilâmina",
     "element": "Planta / Água",
+    "elements": [
+      "grass",
+      "water"
+    ],
     "stage": 3,
     "description": "As espadas, cobertas por prismana, nunca quebram, não importa a força dos golpes.",
     "image": "/aniimo/034-prismana.webp",
@@ -2298,6 +2934,10 @@
     "kind": "prismana",
     "name": "Florecanta",
     "element": "Luz / Planta",
+    "elements": [
+      "holy",
+      "grass"
+    ],
     "stage": 3,
     "description": "Prismana transforma o vestido floral branco puro em uma saia semelhante a cristal, cintilando com uma luz deslumbrante a cada movimento. Os espinhos entrelaçados nas rosas formam uma coroa, e cada ponta afiada é suavizada em uma proteção gentil.",
     "image": "/aniimo/035-prismana.webp",
@@ -2310,6 +2950,10 @@
     "kind": "prismana",
     "name": "Ignítis",
     "element": "Fogo / Sombra",
+    "elements": [
+      "fire",
+      "dark"
+    ],
     "stage": 3,
     "description": "O prismana tinge suas foices de carmesim, enquanto as figuras negras se ocultam na noite como assassinos.",
     "image": "/aniimo/041-prismana.webp",
@@ -2322,6 +2966,10 @@
     "kind": "prismana",
     "name": "Gelispada",
     "element": "Luz / Gelo",
+    "elements": [
+      "holy",
+      "ice"
+    ],
     "stage": 3,
     "description": "O prismana tinge de vermelho a ponta da pelagem e as lâminas em sua boca, como aviso a outras criaturas.",
     "image": "/aniimo/044-prismana.webp",
@@ -2334,6 +2982,10 @@
     "kind": "prismana",
     "name": "Pelirraio",
     "element": "Sombra / Elétrico",
+    "elements": [
+      "dark",
+      "electric"
+    ],
     "stage": 3,
     "description": "A energia do prismana flui pela pelagem deles, emitindo raios ofuscantes e ameaçadores que servem de aviso para manter os outros afastados.",
     "image": "/aniimo/046-prismana.webp",
@@ -2346,6 +2998,9 @@
     "kind": "prismana",
     "name": "Musculontra",
     "element": "Água",
+    "elements": [
+      "water"
+    ],
     "stage": 3,
     "description": "Sua concha preciosa foi remodelada pela luz de prismana e virou um símbolo de comando. A energia percorre Musculontra e eriça sua pelagem. Basta um tapinha na barriga redonda dele e ondas poderosas se erguem ao lado, como se estivessem esperando ordens!",
     "image": "/aniimo/052-prismana.webp",
@@ -2358,6 +3013,10 @@
     "kind": "prismana",
     "name": "Conchastro",
     "element": "Luz / Água",
+    "elements": [
+      "holy",
+      "water"
+    ],
     "stage": 3,
     "description": "Guiada pelo Prismana, a determinação de fazer justiça proporciona um tom dourado à armadura de concha de Conchastro.",
     "image": "/aniimo/055-prismana.webp",
@@ -2370,6 +3029,10 @@
     "kind": "prismana",
     "name": "Murisouro",
     "element": "Sombra / Pedra",
+    "elements": [
+      "dark",
+      "rock"
+    ],
     "stage": 3,
     "description": "Após absorver Energia Prismana, a Perseguição Instintiva do Murisouro pela velocidade máxima irrompe em chamas, transformando sua Aniicápsula de Pedra em lava derretida e escaldante. Quando usa Arremetida, seu rugido estrondoso e o fogo crescente fazem parecer que ele está pronto para esmagar tudo em seu caminho.",
     "image": "/aniimo/057-prismana.webp",
@@ -2382,6 +3045,10 @@
     "kind": "prismana",
     "name": "Fenjuba",
     "element": "Luz / Elétrico",
+    "elements": [
+      "holy",
+      "electric"
+    ],
     "stage": 3,
     "description": "Afetados pelo prismana, a pelagem fica com um tom doce e romântico. Apenas com um sorriso, fazem as pessoas sentirem o sabor da felicidade.",
     "image": "/aniimo/060-prismana.webp",
@@ -2394,6 +3061,9 @@
     "kind": "prismana",
     "name": "Peônio",
     "element": "Sombra",
+    "elements": [
+      "dark"
+    ],
     "stage": 3,
     "description": "A energia do prismana desperta um fragmento do dragão que um dia foi derrotado por esta espada. Garras de dragão irregulares e cristas surgem da armadura e das armas do Peônio.",
     "image": "/aniimo/062-prismana.webp",
@@ -2406,6 +3076,10 @@
     "kind": "prismana",
     "name": "Infergon",
     "element": "Fogo / Vento",
+    "elements": [
+      "fire",
+      "wind"
+    ],
     "stage": 3,
     "description": "Prismana faz com que o Poder do Fogo de Infergon se torne cada vez mais violento, irrompendo de sua armadura em chamas violetas ardentes, como se quisesse reduzir tudo ao seu redor a cinzas.",
     "image": "/aniimo/067-prismana.webp",
@@ -2418,6 +3092,10 @@
     "kind": "prismana",
     "name": "Ferurso",
     "element": "Sombra / Pedra",
+    "elements": [
+      "dark",
+      "rock"
+    ],
     "stage": 3,
     "description": "A energia do prismana acalma sua alma em fúria, levando-os a um sono tranquilo. Porém, se o descanso é interrompido, entram em fúria e tornam-se seu pior pesadelo.",
     "image": "/aniimo/069-prismana.webp",
@@ -2430,6 +3108,10 @@
     "kind": "prismana",
     "name": "Magmarex",
     "element": "Fogo / Sombra",
+    "elements": [
+      "fire",
+      "dark"
+    ],
     "stage": 3,
     "description": "Os cristais nas costas absorvem energia do prismana, entrando em erupção com jatos de energia magníficos e irradiando calor aterrorizante.",
     "image": "/aniimo/072-prismana.webp",
@@ -2442,6 +3124,10 @@
     "kind": "prismana",
     "name": "Luminela",
     "element": "Luz / Elétrico",
+    "elements": [
+      "holy",
+      "electric"
+    ],
     "stage": 3,
     "description": "A energia do prismana fortalece o órgão elétrico em sua cabeça, permitindo gerar uma luz suave de cura com eletricidade armazenada para curar companheiros feridos.",
     "image": "/aniimo/079-prismana.webp",
@@ -2454,6 +3140,10 @@
     "kind": "prismana",
     "name": "Fulminte",
     "element": "Luz / Elétrico",
+    "elements": [
+      "holy",
+      "electric"
+    ],
     "stage": 3,
     "description": "A energia prismana dá a Fulminte uma nova explosão de poder para transformá-lo num borrão vermelho no campo de batalha. Desta vez, ele não vai olhar para trás!",
     "image": "/aniimo/10003-prismana.webp",
@@ -2466,6 +3156,9 @@
     "kind": "prismana",
     "name": "Pequeno Espírito de Fogo",
     "element": "Fogo",
+    "elements": [
+      "fire"
+    ],
     "stage": 3,
     "description": "A Energia Prismana faz as chamas do pequeno espírito de fogo cintilarem e fluírem, exibindo com confiança um charme Eletrizante, enquanto seus movimentos saltitantes ficam ainda mais vivos e brincalhões.",
     "image": "/aniimo/11001-prismana.webp",
