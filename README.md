@@ -33,3 +33,11 @@ Projeto de fã, sem fins comerciais e sem vínculo oficial com o jogo.
 - Os dados e sprites da listagem foram obtidos da wiki oficial: [wiki.aniimo.com](https://wiki.aniimo.com).
 
 Se você é titular dos direitos e deseja que algum conteúdo seja removido, abra uma issue neste repositório.
+
+## Variáveis opcionais
+
+- `ADMIN_USER_IDS`: contas que acessam `/admin`, separadas por vírgula (ex.: `github:12345,google:98765`). O ID aparece em `/conta` depois do login.
+- `NEXT_PUBLIC_SITE_URL`: URL pública (canonical, Open Graph, sitemap). Padrão: `https://aniimo-dex-flax.vercel.app`.
+- `NEXT_PUBLIC_CONTACT_EMAIL`: e-mail exibido em Privacidade e Aviso legal. Sem ele, o contato é pelas issues do GitHub.
+
+Ícones do site: `node --experimental-strip-types scripts/make-icons.ts <imagem-quadrada>` regenera `app/icon.png`, `app/apple-icon.png` e `app/favicon.ico`.

@@ -29,12 +29,20 @@ export function mockAniimo(): Aniimo[] {
   }));
 }
 
-// Lê do Postgres (Neon) quando DATABASE_URL existe; senão usa o mock.
+// Lê do Postgres (Neon). O mock só vale em desenvolvimento, sem banco configurado:
+// em produção, falha explícita (a página de erro aparece e o Next segue servindo a última versão boa).
 export async function getAniimo(): Promise<Aniimo[]> {
-  if (!process.env.DATABASE_URL) return mockAniimo();
+  if (!process.env.DATABASE_URL) {
+    if (process.env.NODE_ENV === "production") throw new Error("DATABASE_URL não configurada");
+    return mockAniimo();
+  }
   const { neon } = await import("@neondatabase/serverless");
   const rows = await neon(process.env.DATABASE_URL)`select id, form, form_label, kind, name, element, hue, image, stage, description from aniimo order by position, id`;
-  return rows.length ? (rows.map(({ form_label, ...r }) => ({ ...r, formLabel: form_label ?? undefined, image: r.image ?? undefined, description: r.description ?? undefined })) as Aniimo[]) : mockAniimo();
+  if (!rows.length) {
+    if (process.env.NODE_ENV === "production") throw new Error("Tabela aniimo vazia: rode npm run db:seed");
+    return mockAniimo();
+  }
+  return rows.map(({ form_label, ...r }) => ({ ...r, formLabel: form_label ?? undefined, image: r.image ?? undefined, description: r.description ?? undefined })) as Aniimo[];
 }
 
 // Enquanto não há sprites reais (/public/aniimo/001.png), desenha um bichinho genérico.

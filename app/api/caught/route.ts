@@ -1,8 +1,9 @@
 import { and, eq, or } from "drizzle-orm";
 import { auth } from "@/auth";
 import { db } from "@/db";
-import { aniimo, caught, VARIANTS, type Variant } from "@/db/schema";
-import { entryKey, parseKey } from "@/lib/aniimo";
+import { aniimo, caught, VARIANTS } from "@/db/schema";
+import { parseKey } from "@/lib/aniimo";
+import { loadCaught } from "@/lib/caught";
 
 async function uid() {
   const s = await auth();
@@ -12,13 +13,7 @@ async function uid() {
 export async function GET() {
   const u = await uid();
   if (!u) return Response.json({ error: "unauthorized" }, { status: 401 });
-  const rows = await db
-    .select({ id: caught.aniimoId, form: caught.form, variant: caught.variant })
-    .from(caught)
-    .where(eq(caught.userId, u.uid));
-  const out = Object.fromEntries(VARIANTS.map((v) => [v, [] as string[]])) as Record<Variant, string[]>;
-  for (const r of rows) out[r.variant]?.push(entryKey(r.id, r.form));
-  return Response.json({ name: u.name, caught: out });
+  return Response.json({ name: u.name, caught: await loadCaught(u.uid) });
 }
 
 // Body: { variant, add?: string[], remove?: string[] }  (chaves: "5" ou "5:highland")

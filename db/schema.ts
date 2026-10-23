@@ -1,4 +1,4 @@
-import { foreignKey, integer, pgTable, primaryKey, text, timestamp } from "drizzle-orm/pg-core";
+import { boolean, foreignKey, integer, pgTable, primaryKey, text, timestamp } from "drizzle-orm/pg-core";
 
 export const KINDS = ["base", "regional", "prismana"] as const;
 export type Kind = (typeof KINDS)[number];
@@ -41,3 +41,12 @@ export const caught = pgTable(
     foreignKey({ columns: [t.aniimoId, t.form], foreignColumns: [aniimo.id, aniimo.form] }).onDelete("cascade"),
   ],
 );
+
+// Perfil opcional: só existe para quem abre a página de conta. share_token é o link público (/c/<token>).
+export const profiles = pgTable("profiles", {
+  userId: text("user_id").primaryKey(),
+  displayName: text("display_name").notNull(),
+  shareToken: text("share_token").unique(),
+  isPublic: boolean("is_public").notNull().default(false),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+});
