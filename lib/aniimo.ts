@@ -1,4 +1,18 @@
-export type Aniimo = { id: number; name: string; element: string; hue: number; image?: string; stage?: number; description?: string };
+export type Kind = "base" | "regional" | "prismana";
+export type Aniimo = {
+  id: number; // número da dex; formas regionais/prismanas repetem o do original
+  form: string; // "basic" | "highland" | "prismana" | ...
+  formLabel?: string;
+  kind: Kind;
+  name: string; element: string; hue: number; image?: string; stage?: number; description?: string;
+};
+
+// Chave única de uma entrada: "5" (básica) ou "5:highland". Usada no cliente e na API.
+export const entryKey = (id: number, form: string) => (form === "basic" ? String(id) : `${id}:${form}`);
+export function parseKey(k: string): { id: number; form: string } | null {
+  const [id, form = "basic"] = k.split(":");
+  return Number.isInteger(Number(id)) && form ? { id: Number(id), form } : null;
+}
 
 // ===== MOCK =====
 const NAMES = ["Skippy","Mossling","Embera","Tidepup","Glimmoth","Bramblet","Pebblin","Zephyra","Cindrel","Lumipaw","Frostel","Voltik","Dewdrop","Thornix","Quillby","Marshmo","Sunnyx","Nimbler","Rustle","Cobalto","Fernyx","Gustle","Ashkit","Pondo","Blossa","Craggo","Wispur","Drizzle","Hexbug","Tumblet","Petalune","Ripple","Kindle","Moonlet","Snapdra","Burrowl","Glacier","Sparkle","Mistfin","Oakley","Puddle","Flarepup","Gleamer","Sootlet","Brooklyn","Velvetail","Clovet","Rumbler"];
@@ -7,6 +21,8 @@ const ELEMENTS = ["Água", "Fogo", "Planta", "Luz", "Sombra", "Gelo"];
 export function mockAniimo(): Aniimo[] {
   return Array.from({ length: 60 }, (_, i) => ({
     id: i + 1,
+    form: "basic",
+    kind: "base" as const,
     name: NAMES[i] ?? `Aniimo ${i + 1}`,
     element: ELEMENTS[i % ELEMENTS.length],
     hue: (i * 47) % 360,
@@ -17,8 +33,8 @@ export function mockAniimo(): Aniimo[] {
 export async function getAniimo(): Promise<Aniimo[]> {
   if (!process.env.DATABASE_URL) return mockAniimo();
   const { neon } = await import("@neondatabase/serverless");
-  const rows = await neon(process.env.DATABASE_URL)`select id, name, element, hue, image, stage, description from aniimo order by id`;
-  return rows.length ? (rows.map((r) => ({ ...r, image: r.image ?? undefined, description: r.description ?? undefined })) as Aniimo[]) : mockAniimo();
+  const rows = await neon(process.env.DATABASE_URL)`select id, form, form_label, kind, name, element, hue, image, stage, description from aniimo order by position, id`;
+  return rows.length ? (rows.map(({ form_label, ...r }) => ({ ...r, formLabel: form_label ?? undefined, image: r.image ?? undefined, description: r.description ?? undefined })) as Aniimo[]) : mockAniimo();
 }
 
 // Enquanto não há sprites reais (/public/aniimo/001.png), desenha um bichinho genérico.

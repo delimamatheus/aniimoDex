@@ -36,6 +36,7 @@ button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid 
 .vr.on{background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.15)}
 .vr.umbral.on{background:#5b3a9e;color:#fff}
 .vr.shiny.on{background:#ff8fc2;color:#fff}
+.vr.prismana.on{background:linear-gradient(110deg,#ff8fb1,#ffd36e,#7fe3b0,#6fc3ff,#b79bff);color:#23384a}
 .vr:has(input:focus-visible){outline:3px solid #fff;outline-offset:2px}
 
 /* Umbral: sombra roxa na parte de baixo do hexágono */
@@ -87,3 +88,15 @@ button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid 
 .acct{order:3;display:flex;align-items:center;gap:8px;color:#fff;font-weight:600}
 .acct button{padding:8px 16px;border-radius:99px;border:1px solid rgba(255,255,255,.8);background:rgba(255,255,255,.5);font:inherit;color:inherit;cursor:pointer}
 .desc{font-size:13px;line-height:1.4;margin:8px 0;max-height:7.5em;overflow:auto}
+
+/* Prismana: fundo furta-cor com brilho que passa */
+.v-prismana .slot:not(.empty) .fx{background:linear-gradient(125deg,rgba(255,150,190,.9),rgba(255,214,120,.85) 25%,rgba(130,230,180,.85) 50%,rgba(120,195,255,.9) 75%,rgba(185,155,255,.9));background-size:200% 200%;animation:prism 6s ease-in-out infinite}
+.v-prismana .slot:not(.empty) .fx::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.65) 50%,transparent 65%);background-size:250% 100%;animation:sheen 3.4s ease-in-out infinite}
+.v-prismana .slot:not(.empty) .hex polygon{fill:#fff;stroke:#fff}
+@keyframes prism{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}
+@keyframes sheen{0%{background-position:150% 0}60%,100%{background-position:-100% 0}}
+@media(prefers-reduced-motion:reduce){.v-prismana .slot .fx,.v-prismana .slot .fx::after{animation:none}}
+
+/* Forma regional: marcador discreto no canto do hexágono + nome da forma no painel */
+.rg{position:absolute;top:10%;left:14%;width:calc(var(--w)*.17);height:calc(var(--w)*.17);border-radius:50%;background:#3fae7d;border:2px solid #fff;pointer-events:none}
+.form{margin:0;font-size:13px;font-weight:800;color:#2c9a6e}

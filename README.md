@@ -14,7 +14,7 @@ Fase 2: trocar `getAniimo()` por consulta ao Postgres e salvar `caught` no banco
 3. `npm run db:migrate` cria/atualiza as tabelas (Drizzle, pasta `drizzle/`) e `npm run db:seed` popula `aniimo`.
    Ao mudar `db/schema.ts`: `npm run db:generate` e depois `db:migrate`.
 4. Sem `DATABASE_URL`, o app usa os dados mockados.
-5. Dados reais: `npm run wiki:fetch` baixa a listagem e os sprites da wiki (para `public/aniimo/` e `data/aniimo.json`) e `npm run db:seed` grava no banco.
+5. Dados reais: `npm run wiki:fetch` baixa da wiki a listagem, as formas regionais/prismanas e os sprites (para `public/aniimo/` e `data/aniimo.json`); `npm run db:seed` grava no banco. A tabela `aniimo` tem uma linha por (número, forma); `position` define a ordem (básicas, depois regionais; prismanas ficam em lista própria).
 
 ## Login (Auth.js)
 

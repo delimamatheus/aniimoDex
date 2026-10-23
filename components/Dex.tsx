@@ -1,22 +1,24 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { signIn, signOut } from "next-auth/react";
-import { Aniimo, sprite } from "@/lib/aniimo";
+import { Aniimo, entryKey, sprite } from "@/lib/aniimo";
 
 // Box do jogo: 24 slots em formato de hexágono grande (4-5-6-5-4)
 const ROWS = [4, 5, 6, 5, 4];
 const PER_BOX = 24;
 const KEY = "aniimo-caught-v2";
 const KEY_V1 = "aniimo-caught-v1"; // só havia o normal
-type Variant = "normal" | "umbral" | "shiny";
-type Marks = Record<number, true>;
+type Variant = "normal" | "umbral" | "shiny" | "prismana";
+type Marks = Record<string, true>; // chave = entryKey(id, form)
 type All = Record<Variant, Marks>;
 const VARIANTS: { id: Variant; label: string }[] = [
   { id: "normal", label: "Normal" },
   { id: "umbral", label: "Umbral" },
   { id: "shiny", label: "Cintilante" },
+  { id: "prismana", label: "Prismana" },
 ];
-const EMPTY: All = { normal: {}, umbral: {}, shiny: {} };
+const EMPTY: All = { normal: {}, umbral: {}, shiny: {}, prismana: {} };
+const key = (a: Aniimo) => entryKey(a.id, a.form);
 const pad = (n: number) => String(n).padStart(3, "0");
 
 function Hex() {
@@ -46,12 +48,17 @@ export default function Dex({ aniimo }: { aniimo: Aniimo[] }) {
   const [ready, setReady] = useState(false);
   const [user, setUser] = useState<string | null>(null); // nome do usuário logado
 
-  const boxes = Math.max(1, Math.ceil(aniimo.length / PER_BOX));
-  const page = aniimo.slice(box * PER_BOX, (box + 1) * PER_BOX);
+  // Prismana tem a própria lista; as demais mostram as básicas e, depois, as regionais (já em ordem).
+  const list = useMemo(
+    () => aniimo.filter((a) => (variant === "prismana") === (a.kind === "prismana")),
+    [aniimo, variant],
+  );
+  const boxes = Math.max(1, Math.ceil(list.length / PER_BOX));
+  const page = list.slice(box * PER_BOX, (box + 1) * PER_BOX);
   const caught = all[variant];
-  const countIn = (b: number) => aniimo.slice(b * PER_BOX, (b + 1) * PER_BOX).filter((a) => caught[a.id]).length;
-  const total = Object.keys(caught).length;
-  const shown = focus ?? page[0] ?? null;
+  const countIn = (b: number) => list.slice(b * PER_BOX, (b + 1) * PER_BOX).filter((a) => caught[key(a)]).length;
+  const total = list.filter((a) => caught[key(a)]).length;
+  const shown = (focus && list.some((a) => key(a) === key(focus)) ? focus : null) ?? page[0] ?? null;
   const go = (d: number) => setBox((b) => (b + d + boxes) % boxes);
 
   useEffect(() => {
@@ -65,13 +72,13 @@ export default function Dex({ aniimo }: { aniimo: Aniimo[] }) {
       try {
         const res = await fetch("/api/caught");
         if (res.ok) {
-          const { name, caught: remote } = (await res.json()) as { name: string; caught: Record<Variant, number[]> };
-          const merged: All = { normal: {}, umbral: {}, shiny: {} };
+          const { name, caught: remote } = (await res.json()) as { name: string; caught: Partial<Record<Variant, string[]>> };
+          const merged: All = { normal: {}, umbral: {}, shiny: {}, prismana: {} };
           let uploaded = true;
           for (const { id: v } of VARIANTS) {
             (remote[v] ?? []).forEach((id) => (merged[v][id] = true));
             // Primeiro login: sobe o progresso salvo no navegador.
-            const extra = Object.keys(local[v] ?? {}).map(Number).filter((id) => !merged[v][id]);
+            const extra = Object.keys(local[v] ?? {}).filter((k) => !merged[v][k]);
             if (!extra.length) continue;
             const up = await fetch("/api/caught", { method: "PUT", body: JSON.stringify({ variant: v, add: extra }) });
             if (up.ok) extra.forEach((id) => (merged[v][id] = true));
@@ -100,28 +107,30 @@ export default function Dex({ aniimo }: { aniimo: Aniimo[] }) {
     return () => window.removeEventListener("keydown", f);
   });
 
-  const sync = (add: number[], remove: number[]) => {
+  const sync = (add: string[], remove: string[]) => {
     if (!user || (!add.length && !remove.length)) return;
     fetch("/api/caught", { method: "PUT", body: JSON.stringify({ variant, add, remove }) }).catch(() => {});
   };
   const mark = (fn: (m: Marks) => void) =>
     setAll((a) => { const m = { ...a[variant] }; fn(m); return { ...a, [variant]: m }; });
-  const toggle = (id: number) => {
-    const had = !!caught[id];
-    mark((m) => { if (had) delete m[id]; else m[id] = true; });
-    sync(had ? [] : [id], had ? [id] : []);
+  const toggle = (k: string) => {
+    const had = !!caught[k];
+    mark((m) => { if (had) delete m[k]; else m[k] = true; });
+    sync(had ? [] : [k], had ? [k] : []);
   };
   const togglePage = () => {
-    const every = page.every((a) => caught[a.id]);
-    const ids = page.map((a) => a.id);
-    mark((m) => ids.forEach((id) => { if (every) delete m[id]; else m[id] = true; }));
-    sync(every ? [] : ids, every ? ids : []);
+    const every = page.every((a) => caught[key(a)]);
+    const keys = page.map(key);
+    mark((m) => keys.forEach((k) => { if (every) delete m[k]; else m[k] = true; }));
+    sync(every ? [] : keys, every ? keys : []);
   };
+
+  const pickVariant = (v: Variant) => { setVariant(v); setBox(0); setFocus(null); };
 
   const reset = () => {
     const label = VARIANTS.find((v) => v.id === variant)!.label;
     if (!confirm(`Apagar o progresso de ${label}?`)) return;
-    const ids = Object.keys(caught).map(Number);
+    const ids = Object.keys(caught);
     setAll((a) => ({ ...a, [variant]: {} }));
     sync([], ids);
   };
@@ -134,7 +143,7 @@ export default function Dex({ aniimo }: { aniimo: Aniimo[] }) {
         <div className="variants" role="radiogroup" aria-label="Tipo de Aniimo">
           {VARIANTS.map((v) => (
             <label key={v.id} className={"vr " + v.id + (variant === v.id ? " on" : "")}>
-              <input type="radio" name="variant" value={v.id} checked={variant === v.id} onChange={() => setVariant(v.id)} />
+              <input type="radio" name="variant" value={v.id} checked={variant === v.id} onChange={() => pickVariant(v.id)} />
               {v.label}
             </label>
           ))}
@@ -169,16 +178,19 @@ export default function Dex({ aniimo }: { aniimo: Aniimo[] }) {
               {Array.from({ length: n }, (_, i) => {
                 const a = page[k++];
                 if (!a) return <div key={`e${r}-${i}`} className="slot empty"><Hex /><Face /></div>;
+                const ak = key(a);
                 const dim = q && !a.name.toLowerCase().includes(q.toLowerCase()) && String(a.id) !== q;
-                const cls = "slot" + (caught[a.id] ? " got" : "") + (shown?.id === a.id ? " sel" : "") + (dim ? " dim" : "");
+                const cls = "slot" + (caught[ak] ? " got" : "") + (shown && key(shown) === ak ? " sel" : "") + (dim ? " dim" : "");
+                const full = a.formLabel ? `${a.name} (${a.formLabel})` : a.name;
                 return (
-                  <button key={a.id} className={cls} aria-pressed={!!caught[a.id]}
-                    aria-label={`${a.name}, ${caught[a.id] ? "capturado" : "não capturado"}`}
-                    onClick={() => { toggle(a.id); setFocus(a); }}
+                  <button key={ak} className={cls} aria-pressed={!!caught[ak]} title={full}
+                    aria-label={`${full}, ${caught[ak] ? "capturado" : "não capturado"}`}
+                    onClick={() => { toggle(ak); setFocus(a); }}
                     onMouseEnter={() => setFocus(a)} onFocus={() => setFocus(a)}>
                     <Hex />
                     <span className="fx" /><span className="spr"><img src={sprite(a)} alt="" /></span>
                     <span className="tag">{pad(a.id)}</span>
+                    {a.kind === "regional" && <i className="rg" aria-hidden />}
                   </button>
                 );
               })}
@@ -192,19 +204,20 @@ export default function Dex({ aniimo }: { aniimo: Aniimo[] }) {
         {shown && (
           <>
             <h2>{shown.name}</h2>
+            {shown.formLabel && <p className="form">{shown.formLabel}</p>}
             <p className="meta">#{pad(shown.id)} · {shown.element}{shown.stage ? ` · Estágio ${shown.stage}` : ""}</p>
-            <div className="portrait"><img className={caught[shown.id] ? "" : "sil"} src={sprite(shown)} alt="" /></div>
+            <div className="portrait"><img className={caught[key(shown)] ? "" : "sil"} src={sprite(shown)} alt="" /></div>
             {shown.description && <p className="desc">{shown.description}</p>}
-            <p className={"status" + (caught[shown.id] ? " ok" : "")}>{caught[shown.id] ? "Capturado" : "Não capturado"}</p>
-            <button className="act" onClick={() => toggle(shown.id)}>
-              {caught[shown.id] ? "Desmarcar" : "Marcar como capturado"}
+            <p className={"status" + (caught[key(shown)] ? " ok" : "")}>{caught[key(shown)] ? "Capturado" : "Não capturado"}</p>
+            <button className="act" onClick={() => toggle(key(shown))}>
+              {caught[key(shown)] ? "Desmarcar" : "Marcar como capturado"}
             </button>
           </>
         )}
       </aside>
 
       <footer className="bar">
-        <span><b>Aniimo Dex</b> · {total}/{aniimo.length} capturados</span>
+        <span><b>Aniimo Dex</b> · {total}/{list.length} capturados</span>
         <span className="mid">
           <select value={box} onChange={(e) => setBox(Number(e.target.value))} aria-label="Storage">
             {Array.from({ length: boxes }, (_, b) => <option key={b} value={b}>Storage {b + 1}</option>)}
