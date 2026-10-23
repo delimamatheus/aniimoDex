@@ -128,6 +128,22 @@ const tw: Messages = {
   nfTitle: "找不到頁面",
   nfText: "此網址不存在或已被移除。",
   nfBack: "返回 Aniimo Dex",
+
+  // Apoio ao projeto
+  supportLink: "支持這個專案",
+  supportTitle: "支持 Aniimo Dex",
+  supportIntro: "Aniimo Dex 免費，之後也會維持免費。如果它對你有幫助，歡迎自由贊助任意金額，分擔網站的營運成本。",
+  supportNote: "贊助完全自願，用於支付主機、資料庫與網域費用。網站沒有廣告，不贊助也不會有任何功能受限。",
+  kofiBtn: "在 Ko-fi 支持",
+  kofiNote: "信用卡或 PayPal，任何國家皆可使用。",
+  pixTitle: "Pix",
+  pixScan: "請用銀行 App 的相機掃描 QR 碼。",
+  pixCode: "Pix 複製貼上",
+  pixCopy: "複製 Pix 代碼",
+  pixCopied: "已複製 Pix 代碼。",
+  pixCopyFail: "無法自動複製，請選取代碼後手動複製。",
+  qrAlt: "贊助用 Pix QR 碼",
+  pixOnlyBR: "Pix 僅適用於巴西的銀行帳戶。",
 };
 
 export default tw;

@@ -5,7 +5,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "wiki:fetch": "node --experimental-strip-types scripts/fetch-wiki.ts", "db:generate": "drizzle-kit generate",
+    "wiki:fetch": "node --experimental-strip-types scripts/fetch-wiki.ts",
+    "db:generate": "drizzle-kit generate",
     "db:migrate": "node --env-file=.env.local node_modules/drizzle-kit/bin.cjs migrate",
     "db:seed": "node --experimental-strip-types --env-file=.env.local scripts/seed.ts"
   },
@@ -14,11 +15,13 @@
     "drizzle-orm": "^0.45.4",
     "next": "^15.5.0",
     "next-auth": "^5.0.0-beta.32",
+    "qrcode": "^1.5.4",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",
+    "@types/qrcode": "^1.5.6",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "drizzle-kit": "^0.31.11",

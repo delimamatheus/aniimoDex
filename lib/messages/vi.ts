@@ -128,6 +128,22 @@ const vi: Messages = {
   nfTitle: "Không tìm thấy trang",
   nfText: "Địa chỉ không tồn tại hoặc đã bị xóa.",
   nfBack: "Quay lại Aniimo Dex",
+
+  // Apoio ao projeto
+  supportLink: "Ủng hộ dự án",
+  supportTitle: "Ủng hộ Aniimo Dex",
+  supportIntro: "Aniimo Dex miễn phí và sẽ luôn miễn phí. Nếu thấy hữu ích, bạn có thể đóng góp bất kỳ số tiền nào để trang trải chi phí của trang.",
+  supportNote: "Quyên góp là tự nguyện và dùng để trả tiền lưu trữ, cơ sở dữ liệu và tên miền. Không có quảng cáo, và không có gì bị khóa với người không quyên góp.",
+  kofiBtn: "Ủng hộ trên Ko-fi",
+  kofiNote: "Thẻ hoặc PayPal, từ bất kỳ quốc gia nào.",
+  pixTitle: "Pix",
+  pixScan: "Hướng camera của ứng dụng ngân hàng vào mã QR.",
+  pixCode: "Pix sao chép và dán",
+  pixCopy: "Sao chép mã Pix",
+  pixCopied: "Đã sao chép mã Pix.",
+  pixCopyFail: "Không thể tự động sao chép. Hãy chọn mã và sao chép.",
+  qrAlt: "Mã QR Pix để quyên góp",
+  pixOnlyBR: "Pix chỉ hoạt động với tài khoản ngân hàng tại Brazil.",
 };
 
 export default vi;

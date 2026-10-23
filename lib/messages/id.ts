@@ -128,6 +128,22 @@ const id: Messages = {
   nfTitle: "Halaman tidak ditemukan",
   nfText: "Alamat tidak ada atau sudah dihapus.",
   nfBack: "Kembali ke Aniimo Dex",
+
+  // Apoio ao projeto
+  supportLink: "Dukung proyek ini",
+  supportTitle: "Dukung Aniimo Dex",
+  supportIntro: "Aniimo Dex gratis dan akan tetap gratis. Jika membantumu, kamu bisa menyumbang sejumlah berapa pun untuk menutup biaya situs.",
+  supportNote: "Donasi bersifat sukarela dan membantu membayar hosting, basis data, dan domain. Tidak ada iklan, dan tidak ada yang dikunci bagi yang tidak berdonasi.",
+  kofiBtn: "Dukung di Ko-fi",
+  kofiNote: "Kartu atau PayPal, dari negara mana pun.",
+  pixTitle: "Pix",
+  pixScan: "Arahkan kamera aplikasi bankmu ke kode QR.",
+  pixCode: "Pix salin dan tempel",
+  pixCopy: "Salin kode Pix",
+  pixCopied: "Kode Pix disalin.",
+  pixCopyFail: "Tidak dapat menyalin otomatis. Pilih kode lalu salin.",
+  qrAlt: "Kode QR Pix untuk donasi",
+  pixOnlyBR: "Pix hanya berfungsi dengan rekening bank di Brasil.",
 };
 
 export default id;

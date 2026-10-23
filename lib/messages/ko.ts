@@ -128,6 +128,22 @@ const ko: Messages = {
   nfTitle: "페이지를 찾을 수 없습니다",
   nfText: "주소가 존재하지 않거나 삭제되었습니다.",
   nfBack: "Aniimo Dex로 돌아가기",
+
+  // Apoio ao projeto
+  supportLink: "프로젝트 후원하기",
+  supportTitle: "Aniimo Dex 후원하기",
+  supportIntro: "Aniimo Dex는 무료이며 앞으로도 무료입니다. 도움이 되셨다면 사이트 운영비에 보탤 금액을 자유롭게 후원해 주세요.",
+  supportNote: "후원은 자발적이며 호스팅, 데이터베이스, 도메인 비용에 쓰입니다. 광고는 없고, 후원하지 않아도 제한되는 기능은 없습니다.",
+  kofiBtn: "Ko-fi에서 후원",
+  kofiNote: "카드 또는 PayPal, 어느 나라에서나 가능합니다.",
+  pixTitle: "Pix",
+  pixScan: "은행 앱의 카메라로 QR 코드를 스캔하세요.",
+  pixCode: "Pix 복사 후 붙여넣기",
+  pixCopy: "Pix 코드 복사",
+  pixCopied: "Pix 코드를 복사했습니다.",
+  pixCopyFail: "자동으로 복사하지 못했습니다. 코드를 선택해 복사해 주세요.",
+  qrAlt: "후원용 Pix QR 코드",
+  pixOnlyBR: "Pix는 브라질 은행 계좌에서만 사용할 수 있습니다.",
 };
 
 export default ko;

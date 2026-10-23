@@ -8,6 +8,7 @@ import { getAniimo } from "@/lib/aniimo";
 import { loadCaught } from "@/lib/caught";
 import { fmt, isLocale } from "@/lib/i18n";
 import { getMessages } from "@/lib/messages";
+import { supportConfigured } from "@/lib/support";
 
 export const dynamic = "force-dynamic";
 
@@ -38,5 +39,5 @@ export default async function Shared({ params }: P) {
   const p = await find(token);
   if (!p) notFound();
   const [aniimo, caught, t] = await Promise.all([getAniimo(lang), loadCaught(p.userId), getMessages(lang)]);
-  return <Dex aniimo={aniimo} lang={lang} t={t} readOnly={{ owner: p.displayName, caught }} />;
+  return <Dex aniimo={aniimo} lang={lang} t={t} support={supportConfigured()} readOnly={{ owner: p.displayName, caught }} />;
 }

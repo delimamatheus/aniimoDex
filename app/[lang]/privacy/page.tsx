@@ -39,7 +39,7 @@ function Pt({ lang, t }: { lang: Locale; t: { opensNewTab: string } }) {
       <h1>Política de Privacidade</h1>
       <p className="muted">Última atualização: 22 de outubro de 2026</p>
       <p>
-        O Aniimo Dex é um projeto de fã, gratuito e sem fins comerciais, mantido por uma pessoa física. Esta página explica, de forma direta,
+        O Aniimo Dex é um projeto de fã, gratuito, mantido por uma pessoa física. Pode receber doações voluntárias para cobrir custos, sem anúncios. Esta página explica, de forma direta,
         quais dados tratamos, conforme a Lei Geral de Proteção de Dados (LGPD, Lei 13.709/2018).
       </p>
 
@@ -55,6 +55,9 @@ function Pt({ lang, t }: { lang: Locale; t: { opensNewTab: string } }) {
           você escolheu e um código aleatório do link.
         </li>
         <li><b>Registros técnicos:</b> a hospedagem registra dados de acesso (como endereço IP e navegador) para segurança e funcionamento.</li>
+        <li>
+          <b>Doações (opcional):</b> se você doar, o pagamento acontece no Ko-fi ou no seu banco (Pix). Não recebemos dados de cartão nem ligamos a doação à sua conta.
+        </li>
         <li>
           <b>Idioma:</b> escolhemos o idioma do site pelo idioma do seu navegador e, se ele não indicar um idioma disponível, pelo país
           aproximado da sua conexão, informado pela hospedagem. Esse dado não é guardado. Se você trocar o idioma manualmente, guardamos a
@@ -80,6 +83,7 @@ function Pt({ lang, t }: { lang: Locale; t: { opensNewTab: string } }) {
         <li><b>Vercel</b>: hospedagem do site.</li>
         <li><b>Neon</b>: banco de dados (PostgreSQL).</li>
         <li><b>Google</b> e <b>GitHub</b>: autenticação, apenas se você escolher entrar por eles.</li>
+        <li><b>Ko-fi</b>: pagamento de doações, apenas se você escolher doar por ele (o pagamento acontece no site deles).</li>
       </ul>
 
       <h2>5. Cookies e armazenamento</h2>
@@ -114,7 +118,7 @@ function En({ lang, t }: { lang: Locale; t: { opensNewTab: string } }) {
       <h1>Privacy Policy</h1>
       <p className="muted">Last updated: October 22, 2026</p>
       <p>
-        Aniimo Dex is a free fan project with no commercial purpose, run by an individual. This page explains plainly what data we process.
+        Aniimo Dex is a free fan project run by an individual. It may accept voluntary donations to cover costs, and shows no ads. This page explains plainly what data we process.
         It is written with Brazil&rsquo;s data protection law (LGPD) in mind, and we apply the same practices to everyone.
       </p>
 
@@ -130,6 +134,9 @@ function En({ lang, t }: { lang: Locale; t: { opensNewTab: string } }) {
           random link code.
         </li>
         <li><b>Technical logs:</b> the hosting provider records access data (such as IP address and browser) for security and operation.</li>
+        <li>
+          <b>Donations (optional):</b> if you donate, the payment happens on Ko-fi or with your bank (Pix). We don&rsquo;t receive card details and we don&rsquo;t link the donation to your account.
+        </li>
         <li>
           <b>Language:</b> we pick the site language from your browser&rsquo;s language and, if it doesn&rsquo;t indicate a supported one,
           from the approximate country of your connection, provided by the host. This is not stored. If you change the language manually, we
@@ -154,6 +161,7 @@ function En({ lang, t }: { lang: Locale; t: { opensNewTab: string } }) {
         <li><b>Vercel</b>: site hosting.</li>
         <li><b>Neon</b>: database (PostgreSQL).</li>
         <li><b>Google</b> and <b>GitHub</b>: authentication, only if you choose to sign in with them.</li>
+        <li><b>Ko-fi</b>: donation payments, only if you choose to donate through it (the payment happens on their site).</li>
       </ul>
 
       <h2>5. Cookies and storage</h2>

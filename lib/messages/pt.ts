@@ -140,6 +140,22 @@ const pt = {
   nfTitle: "Página não encontrada",
   nfText: "O endereço não existe ou foi removido.",
   nfBack: "Voltar ao Aniimo Dex",
+
+  // Apoio ao projeto
+  supportLink: "Apoie o projeto",
+  supportTitle: "Apoie o Aniimo Dex",
+  supportIntro: "O Aniimo Dex é gratuito e continuará sendo. Se ele te ajuda, você pode contribuir com qualquer valor para cobrir os custos do site.",
+  supportNote: "As doações são voluntárias e ajudam a pagar hospedagem, banco de dados e domínio. Não há anúncios, e nada fica bloqueado para quem não doa.",
+  kofiBtn: "Apoiar no Ko-fi",
+  kofiNote: "Cartão ou PayPal, de qualquer país.",
+  pixTitle: "Pix",
+  pixScan: "Aponte a câmera do app do seu banco para o QR Code.",
+  pixCode: "Pix copia e cola",
+  pixCopy: "Copiar código Pix",
+  pixCopied: "Código Pix copiado.",
+  pixCopyFail: "Não foi possível copiar automaticamente. Selecione o código e copie.",
+  qrAlt: "QR Code Pix para doação",
+  pixOnlyBR: "O Pix funciona apenas com contas bancárias no Brasil.",
 };
 
 export type Messages = typeof pt;

@@ -52,8 +52,8 @@ export default async function Legal({ params }: P) {
           <p className="muted">Última atualização: 22 de outubro de 2026</p>
           <h2>Projeto de fã</h2>
           <p>
-            O Aniimo Dex é um projeto de fã, gratuito e sem fins comerciais. <b>Não tem vínculo, patrocínio ou aprovação</b> da desenvolvedora
-            ou da publisher do jogo Aniimo.
+            O Aniimo Dex é um projeto de fã e gratuito. <b>Não tem vínculo, patrocínio ou aprovação</b> da desenvolvedora
+            ou da publisher do jogo Aniimo. Não vende produtos nem conteúdo do jogo e não exibe anúncios; doações voluntárias servem apenas para cobrir os custos do site e não dão acesso a nada.
           </p>
           <h2>Direitos sobre o conteúdo</h2>
           <p>
@@ -74,8 +74,8 @@ export default async function Legal({ params }: P) {
           <p className="muted">Last updated: October 22, 2026</p>
           <h2>Fan project</h2>
           <p>
-            Aniimo Dex is a free fan project with no commercial purpose. <b>It is not affiliated with, sponsored by or approved by</b> the
-            developer or publisher of the game Aniimo.
+            Aniimo Dex is a free fan project. <b>It is not affiliated with, sponsored by or approved by</b> the
+            developer or publisher of the game Aniimo. It sells no products or game content and shows no ads; voluntary donations only help cover the site&rsquo;s costs and unlock nothing.
           </p>
           <h2>Rights in the content</h2>
           <p>

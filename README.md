@@ -27,7 +27,7 @@ Logado, o progresso fica na tabela `caught`; no primeiro login o que estava no l
 
 ## Créditos
 
-Projeto de fã, sem fins comerciais e sem vínculo oficial com o jogo.
+Projeto de fã, gratuito e sem vínculo oficial com o jogo. Aceita doações voluntárias só para cobrir custos, sem anúncios.
 
 - **Aniimo** e todos os personagens, nomes, imagens e textos pertencem aos seus respectivos criadores e à empresa responsável pelo jogo.
 - Os dados e sprites da listagem foram obtidos da wiki oficial: [wiki.aniimo.com](https://wiki.aniimo.com).
@@ -52,3 +52,13 @@ O site existe em 12 idiomas, os mesmos da wiki oficial: `pt en es fr de ja ko tw
 - **Nome, descrição e forma de cada Aniimo**: vêm da wiki (`npm run wiki:fetch` gera `data/i18n.json`; `npm run db:seed` grava na tabela `aniimo_i18n`). Sem tradução para um idioma, vale o português.
 - Política de privacidade e aviso legal existem em português e inglês; os outros idiomas mostram a versão em inglês com um aviso.
 - Painel de admin (`/<idioma>/admin`) só em português.
+
+## Apoio (Ko-fi e Pix)
+
+A página `/<idioma>/support` e o link no rodapé só aparecem se houver algo configurado (na Vercel e no `.env.local`; é preciso redeploy depois de mudar):
+
+- `KOFI_URL`: `https://ko-fi.com/<seu-usuario>` (só aceita links do ko-fi.com).
+- `PIX_KEY`: chave Pix. Prefira uma **chave aleatória**, para não expor CPF, telefone ou e-mail.
+- `PIX_NAME` e `PIX_CITY` (opcionais): nome e cidade do recebedor.
+
+O QR Code e o "copia e cola" são gerados no próprio site (`lib/pix.ts`), sem valor fixo.

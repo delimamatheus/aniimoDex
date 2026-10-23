@@ -128,6 +128,22 @@ const es: Messages = {
   nfTitle: "Página no encontrada",
   nfText: "La dirección no existe o fue eliminada.",
   nfBack: "Volver a Aniimo Dex",
+
+  // Apoio ao projeto
+  supportLink: "Apoya el proyecto",
+  supportTitle: "Apoya Aniimo Dex",
+  supportIntro: "Aniimo Dex es gratuito y lo seguirá siendo. Si te resulta útil, puedes aportar la cantidad que quieras para cubrir los costes del sitio.",
+  supportNote: "Las donaciones son voluntarias y ayudan a pagar el alojamiento, la base de datos y el dominio. No hay anuncios y nada queda bloqueado para quien no dona.",
+  kofiBtn: "Apoyar en Ko-fi",
+  kofiNote: "Tarjeta o PayPal, desde cualquier país.",
+  pixTitle: "Pix",
+  pixScan: "Apunta la cámara de la app de tu banco al código QR.",
+  pixCode: "Pix copia y pega",
+  pixCopy: "Copiar código Pix",
+  pixCopied: "Código Pix copiado.",
+  pixCopyFail: "No se pudo copiar automáticamente. Selecciona el código y cópialo.",
+  qrAlt: "Código QR de Pix para donaciones",
+  pixOnlyBR: "Pix solo funciona con cuentas bancarias de Brasil.",
 };
 
 export default es;

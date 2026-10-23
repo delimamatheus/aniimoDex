@@ -58,11 +58,12 @@ type Props = {
   aniimo: Aniimo[];
   lang: Locale;
   t: Messages;
+  support?: boolean; // há Ko-fi/Pix configurado: mostra o link de apoio no rodapé
   // Coleção pública de outra pessoa (/c/<token>): somente leitura, sem login nem localStorage.
   readOnly?: { owner: string; caught: Partial<Record<Variant, string[]>> };
 };
 
-export default function Dex({ aniimo, lang, t, readOnly }: Props) {
+export default function Dex({ aniimo, lang, t, support, readOnly }: Props) {
   const tr = (k: keyof Messages, vars?: Record<string, string | number>) => fmt(t[k], vars);
   const [all, setAll] = useState<All>(() => (readOnly ? toMarks(readOnly.caught) : EMPTY));
   const [variant, setVariant] = useState<Variant>("normal");
@@ -356,6 +357,7 @@ export default function Dex({ aniimo, lang, t, readOnly }: Props) {
           {t.fanAfter}
         </p>
         <nav aria-label={t.legalNav}>
+          {support && <Link href={`/${lang}/support`}>{t.supportLink}</Link>}
           <Link href={`/${lang}/privacy`}>{t.privacy}</Link>
           <Link href={`/${lang}/legal`}>{t.legalNotice}</Link>
           {user && <Link href={`/${lang}/account`}>{t.myAccount}</Link>}

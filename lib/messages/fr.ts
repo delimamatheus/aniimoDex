@@ -128,6 +128,22 @@ const fr: Messages = {
   nfTitle: "Page introuvable",
   nfText: "Cette adresse n'existe pas ou a été supprimée.",
   nfBack: "Retour à Aniimo Dex",
+
+  // Apoio ao projeto
+  supportLink: "Soutenir le projet",
+  supportTitle: "Soutenir Aniimo Dex",
+  supportIntro: "Aniimo Dex est gratuit et le restera. Si le site vous aide, vous pouvez contribuer du montant que vous voulez pour couvrir ses frais.",
+  supportNote: "Les dons sont volontaires et aident à payer l'hébergement, la base de données et le domaine. Il n'y a aucune publicité, et rien n'est verrouillé pour ceux qui ne donnent pas.",
+  kofiBtn: "Soutenir sur Ko-fi",
+  kofiNote: "Carte bancaire ou PayPal, depuis n'importe quel pays.",
+  pixTitle: "Pix",
+  pixScan: "Pointez l'appareil photo de votre application bancaire vers le code QR.",
+  pixCode: "Pix copier-coller",
+  pixCopy: "Copier le code Pix",
+  pixCopied: "Code Pix copié.",
+  pixCopyFail: "Copie automatique impossible. Sélectionnez le code et copiez-le.",
+  qrAlt: "Code QR Pix pour les dons",
+  pixOnlyBR: "Pix ne fonctionne qu'avec des comptes bancaires au Brésil.",
 };
 
 export default fr;
